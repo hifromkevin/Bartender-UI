@@ -101,3 +101,11 @@ typings/
 
 # TernJS port file
 .tern-port
+
+# Apple
+.DS_Store
+client/.DS_Store
+client/dist/.DS_Store
+
+# Webpack
+client/dist/bundle.js
