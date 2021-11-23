@@ -107,5 +107,6 @@ typings/
 client/.DS_Store
 client/dist/.DS_Store
 
-# Webpack
+# Webpack bundle and hashed image
 client/dist/bundle.js
+client/dist/5dfa48f697f45347dcb5daa845fa1c62.jpg
