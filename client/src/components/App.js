@@ -79,25 +79,45 @@ const App = () => {
     cocktails: [
       {
         cocktailName: 'Fancy Name',
-        cocktailImage: 'assets/hella-tasty.jpg'
+        cocktailDescription: 'Leverage agile frameworks to provide a robust synopsis for high level overviews.',
+        cocktailImage: 'assets/hella-tasty.jpg',
+        cocktailIngredients: [
+          {
+            ingredientName: 'Vodka',
+            ingredientAmount: '1.5 oz'
+          },
+          {
+            ingredientName: 'Cranberry Juice',
+            ingredientAmount: '2 oz'
+          },
+          {
+            ingredientName: 'Other Stuff',
+            ingredientAmount: '0.5 oz'
+          },
+        ]
       },
       {
         cocktailName: 'Fancy Name 2',
-        cocktailImage: 'assets/hella-tasty.jpg'
+        cocktailDescription: 'Longer Text.  Leverage agile frameworks to provide a robust synopsis for high level overviews. Leverage agile frameworks to provide.',
+        cocktailImage: 'assets/chocolatini.jpg'
       },
       {
-        cocktailName: 'Fancy Name 3',
+        cocktailName: 'Fancy Name with More Text',
+        cocktailDescription: 'Leverage agile frameworks to provide a robust synopsis for high level overviews.',
         cocktailImage: 'assets/hella-tasty.jpg'
       },
       {
         cocktailName: 'Fancy Name 4',
+        cocktailDescription: 'Leverage agile frameworks to provide a robust synopsis for high level overviews.',
         cocktailImage: 'assets/hella-tasty.jpg'
       },
       {
         cocktailName: 'Fancy Name 5',
+        cocktailDescription: 'Leverage agile frameworks to provide a robust synopsis for high level overviews.',
         cocktailImage: 'assets/hella-tasty.jpg'
       }
-    ]
+    ],
+    selectedPage: 'homepage'
   });
 
   const setSelectedPage = (pg) => setBartenderState(
@@ -111,7 +131,7 @@ const App = () => {
 
   switch (selectedPage) {
     case 'selectedCocktail':
-      return <SelectedCocktail />
+      return <SelectedCocktail cocktail={cocktails[0]} />
     case 'selectedMixer':
       return <SelectedMixer />
     case 'homepage':
