@@ -1,16 +1,18 @@
 .homepage
-  background-image: linear-gradient(0deg, rgba(255, 0, 150, 0.3), rgba(255, 0, 150, 0.3)), url('../assets/gradient_bg.jpg')
+  // background-image: linear-gradient(0deg, rgba(255, 0, 150, 0.3), rgba(255, 0, 150, 0.3)), url('../assets/gradient_bg.jpg')
+  background-image: url('../assets/dark-purple.jpg')
   background-position: center center
   background-repeat: no-repeat
   background-size: cover
   height: 100%
   width: 100%
   &__heading
+    color: $white
     font-family: $heading
     font-size: 22px
     font-weight: $bold
     letter-spacing: 5px
-    margin: 30px 0px 10px
+    margin: 20px 0px 10px
   &__logo
     background-color: $cerulean
     color: $white
@@ -27,32 +29,42 @@
   &__list
     display: flex
     justify-content: space-between
+  &__name
+    color: $white
 
 .mixerContainer
   flex: 1
   margin-right: 1%
 
 .mixer
-  border: 1px solid black
+  background-color: $white
   height: 125px
   position: relative
   &__image
     width: 100%
+    max-height: 100%
+    opacity: 80%
+    transition: opacity 2s
+    &:hover
+      opacity: 100%
   &__tag
-    background-color: $cerulean
+    background-color: $ceruleanFade
+    border-bottom: 3px solid $white
     bottom: 0
     box-sizing: border-box
-    color: white
+    color: $white
     font-family: sans-serif
     left: 0
     position: absolute
     padding: 2%
+    transition: padding 1s
     width: 100%
+    &:hover
+      padding-bottom: 20%
     &__type
       font-size: 10px
       display: block
       letter-spacing: 2px
-
     &__brand
       font-size: 15px
       display: block
@@ -69,24 +81,83 @@
   &__list
     overflow: scroll
 
+// .cocktail2
+//   background-color: $white
+//   display: inline-block
+//   margin-right: 20px
+//   position: relative
+//   width: 200px
+//   &__image
+//     width: 100%
+//     opacity: 80%
+//     transition: opacity 2s
+//     &:hover
+//       opacity: 100%
+//   &__tag
+//     background-color: $ceruleanFade
+//     border-bottom: 3px solid $white
+//     bottom: 0
+//     box-sizing: border-box
+//     color: $white
+//     font-family: sans-serif
+//     left: 0
+//     position: absolute
+//     padding: 5%
+//     transition: padding 1s
+//     width: 100%
+//     text-align: center
+//     &:hover
+//       padding-bottom: 20%
+//     &__description
+//       font-size: $small
+//     &__name
+//       display: block
+//       font-size: $header
+//       letter-spacing: 3px
+//       margin-bottom: 2px
+
 .cocktail
   display: inline-block
-  margin-right: 50px
-  position: relative
-  width: 300px
-  &__image
+  margin-right: 10px
+  width: 500px
+  opacity: 70%
+  transition: opacity 2s
+  &:hover
+    opacity: 100%
+  &__container
     width: 100%
-  &__tag
-    background-color: $cerulean
-    bottom: 0
-    box-sizing: border-box
-    color: white
-    font-family: sans-serif
-    left: 0
-    position: absolute
-    padding: 5%
-    width: 100%
-    &__name
-      display: block
-      font-size: $header
-      letter-spacing: 3px
+    align-items: stretch
+    display: flex
+    flex-direction: row
+    flex-wrap: nowrap
+    &__image
+      & img
+        height: 300px
+    &__tag
+      align-items: center
+      background-color: $ceruleanFade
+      border-bottom: 3px solid $white
+      border-top: 3px solid $white
+      box-sizing: border-box
+      color: $white
+      display: flex
+      flex-direction: column
+      justify-content: center
+      font-family: sans-serif
+      height: 300px
+      max-width: 265px
+      padding: 5%
+      text-align: center
+
+      // &:hover
+      //   padding-bottom: 20%
+      &__description
+        font-size: $standard
+      &__name
+        display: block
+        font-size: $tagHeading
+        letter-spacing: 3px
+        margin-bottom: 10px
+      &__separator
+        margin-bottom: 5px
+        width: 50%
