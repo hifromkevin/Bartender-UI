@@ -1,6 +1,8 @@
 import 'babel-polyfill';
 import React, { useState, useEffect } from 'react';
 
+import Heading from './Heading';
+
 const Homepage = (props) => {
   const { channels, cocktails } = props;
 
@@ -8,13 +10,15 @@ const Homepage = (props) => {
     <div className="homepage">
       <h1 className="homepage__logo">Bartender</h1>
       <div className="station">
-        <h1 className="homepage__heading">Mixer Stations</h1>
+        <Heading heading="Mixer Stations" />
         <div className="station__list">
           {channels.map((channel, channelIndex) => (
             <div
               className="mixerContainer"
               key={channelIndex}
             >
+              <span className="station__name">{channel.channelName}</span>
+
               <div className="mixer">
                 <img
                   className="mixer__image"
@@ -25,7 +29,6 @@ const Homepage = (props) => {
                   <span className="mixer__tag__brand">{channel.selectedMixer || 'Select Mixer'}</span>
                 </div>
               </div>
-              <span className="station__name">{channel.channelName}</span>
             </div>
           ))}
         </div>
@@ -55,9 +58,9 @@ const Homepage = (props) => {
       </div> */}
 
       <div className="cocktailStation">
-        <h1 className="homepage__heading">Available Cocktails</h1>
+        <Heading heading="Available Cocktails" />
         <div className="cocktailStation__container">
-          <div className="cocktailStation__list" style={{ width: (cocktails.length * 510) }}>
+          <div className="cocktailStation__list" style={{ width: (cocktails.length * 475) }}>
             {cocktails.map((cocktail, cocktailIndex) => (
               <div
                 className="cocktail"
@@ -69,7 +72,7 @@ const Homepage = (props) => {
                   </div>
                   <div className="cocktail__container__tag">
                     <span className="cocktail__container__tag__name">{cocktail.cocktailName}</span>
-                    <hr className="cocktail__container__tag__separator" />
+                    <div className="cocktail__container__tag__separator"></div>
                     <span className="cocktail__container__tag__description">{cocktail.cocktailDescription}</span>
                   </div>
                 </div>

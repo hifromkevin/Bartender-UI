@@ -79,7 +79,7 @@ const App = () => {
     cocktails: [
       {
         cocktailName: 'Fancy Name',
-        cocktailDescription: 'Leverage agile frameworks to provide a robust synopsis for high level overviews.',
+        cocktailDescription: 'Leverage agile frame works to provide a robust synopsis for high level overviews.',
         cocktailImage: 'assets/hella-tasty.jpg',
         cocktailIngredients: [
           {
@@ -98,22 +98,22 @@ const App = () => {
       },
       {
         cocktailName: 'Fancy Name 2',
-        cocktailDescription: 'Longer Text.  Leverage agile frameworks to provide a robust synopsis for high level overviews. Leverage agile frameworks to provide.',
+        cocktailDescription: 'Longer Text.  Leverage agile frame works to provide a robust synopsis for high level overviews. Leverage agile frame works to provide.',
         cocktailImage: 'assets/chocolatini.jpg'
       },
       {
         cocktailName: 'Fancy Name with More Text',
-        cocktailDescription: 'Leverage agile frameworks to provide a robust synopsis for high level overviews.',
+        cocktailDescription: 'Leverage agile frame works to provide a robust synopsis for high level overviews.',
         cocktailImage: 'assets/hella-tasty.jpg'
       },
       {
         cocktailName: 'Fancy Name 4',
-        cocktailDescription: 'Leverage agile frameworks to provide a robust synopsis for high level overviews.',
+        cocktailDescription: 'Leverage agile frame works to provide a robust synopsis for high level overviews.',
         cocktailImage: 'assets/hella-tasty.jpg'
       },
       {
         cocktailName: 'Fancy Name 5',
-        cocktailDescription: 'Leverage agile frameworks to provide a robust synopsis for high level overviews.',
+        cocktailDescription: 'Leverage agile frame works to provide a robust synopsis for high level overviews.',
         cocktailImage: 'assets/hella-tasty.jpg'
       }
     ],
