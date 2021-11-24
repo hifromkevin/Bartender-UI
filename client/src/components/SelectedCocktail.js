@@ -35,26 +35,27 @@ const SelectedCocktail = (props) => {
       <div className="selectedCocktail__content">
         <Heading coloring='black' heading={cocktailName} />
 
-        <div className="selectedCocktail__content__ingredients">
-          {
-            cocktailIngredients && cocktailIngredients.map((ingredient, ingredientIndex) => (
+        {cocktailIngredients &&
+          <div className="selectedCocktail__content__ingredients">
+            {cocktailIngredients.map((ingredient, ingredientIndex) => (
               <div key={ingredientIndex}>
                 {`${ingredient.ingredientAmount} ${ingredient.ingredientName}`}
               </div>)
-            )
-          }
-        </div>
+            )}
+          </div>
+        }
         <div className="selectedCocktail__content__description">{cocktailDescription}</div>
         {/* <div className="selectedCocktail__content__garnish">
           <h2>Garnish</h2>
         </div> */}
-        <div className="selectedCocktail__content__steps">
-          {
-            cocktailSteps && cocktailSteps.map((step, stepIndex) => (
+        {cocktailSteps &&
+          <div className="selectedCocktail__content__steps">
+            {cocktailSteps.map((step, stepIndex) => (
               fancyNumber(stepIndex + 1, step)
             ))
-          }
-        </div>
+            }
+          </div>
+        }
         <div className="selectedCocktail__content__options">
           <span className="selectedCocktail__content__options__bottomsUp">Bottoms Up</span>
           <a onClick={() => setSelectedPage('homepage')}>Go Back</a>
