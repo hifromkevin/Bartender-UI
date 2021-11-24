@@ -109,4 +109,4 @@ client/dist/.DS_Store
 
 # Webpack bundle and hashed image
 client/dist/bundle.js
-client/dist/5dfa48f697f45347dcb5daa845fa1c62.jpg
+client/dist/*.jpg
