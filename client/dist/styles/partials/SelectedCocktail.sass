@@ -5,18 +5,57 @@
   flex-wrap: nowrap
   width: 100%
   &__display
-    max-width: 50%
+    width: 50%
+    height: 100vh
     &__image
       max-width: 100%
   &__content
-    max-width: 50%
+    align-items: center
+    box-sizing: border-box
+    color: $soft-black
+    display: flex
+    flex-direction: column
+    justify-content: center
+    padding: 5%
+    text-align: center
+    width: 50%
+    &__description
+      font-size: $standard
+      letter-spacing: 2px
+      line-height: 1.5em
+      width: 75%
     &__name
+      font-family: $heading
     &__ingredients
-      align-content: space-around
       display: flex
+      flex-wrap: wrap
+      font-size: $smallHeading
+      justify-content: space-evenly
+      letter-spacing: 2px
+      margin: 5% 0
       width: 100%
-      &__single
     &__garnish
+      // display: flex
+      // justify-content: space-between
+      // width: 90%
       &__name
       &__icon
     &__options
+      margin-top: 15px
+      width: 100%
+      &__bottomsUp
+        border-radius: 15px
+        padding: 2% 10%
+        border: 1px solid black
+        margin-right: 15px
+    &__steps
+      margin: 5%
+      text-align: left
+    &__step
+      align-items: center
+      display: flex
+      flex-direction: row
+      &__number
+        font-size: 1.5em
+        font-weight: 100
+        margin-right: 5px
