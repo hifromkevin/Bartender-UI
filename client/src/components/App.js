@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 
 import Homepage from './Homepage';
 import SelectedCocktail from './SelectedCocktail';
-import SelectedMixer from './SelectedMixer';
+import SelectedChannel from './SelectedChannel';
 
 const App = () => {
   const [
@@ -94,6 +94,13 @@ const App = () => {
             ingredientName: 'Other Stuff',
             ingredientAmount: '0.5 oz'
           },
+        ],
+        cocktailSteps: [
+          'Grab a shaker.',
+          'Fill shaker with ice.',
+          'Insert shaker into bartender.',
+          'When drink has completed pouring, garnish with an orange wedge.',
+          'Pour into old fashion glass.'
         ]
       },
       {
@@ -117,26 +124,28 @@ const App = () => {
         cocktailImage: 'assets/hella-tasty.jpg'
       }
     ],
-    selectedPage: 'homepage'
+    selectedCocktail: null,
+    selectedChannel: null,
   });
 
-  const setSelectedPage = (pg) => setBartenderState(
+  const setSelectedPage = (pg, data) => setBartenderState(
     state => ({
       ...state,
-      selectedPage: pg
+      selectedPage: pg,
+      [pg]: data
     })
   );
 
-  const { channels, cocktails, selectedPage } = bartenderState;
+  const { channels, cocktails, selectedChannel, selectedCocktail, selectedPage } = bartenderState;
 
   switch (selectedPage) {
     case 'selectedCocktail':
-      return <SelectedCocktail cocktail={cocktails[0]} />
-    case 'selectedMixer':
-      return <SelectedMixer />
+      return <SelectedCocktail setSelectedPage={setSelectedPage} cocktail={selectedCocktail} />
+    case 'selectedChannel':
+      return <SelectedChannel setSelectedPage={setSelectedPage} channel={selectedChannel} />
     case 'homepage':
     default:
-      return <Homepage channels={channels} cocktails={cocktails} />
+      return <Homepage channels={channels} cocktails={cocktails} setSelectedPage={setSelectedPage} />
   }
 
 };
