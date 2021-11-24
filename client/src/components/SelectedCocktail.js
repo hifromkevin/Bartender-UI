@@ -30,7 +30,6 @@ const SelectedCocktail = (props) => {
   return (
     <div className="selectedCocktail">
       <div className="selectedCocktail__display" style={styling}>
-        {/* <img className="selectedCocktail__display__image" src={cocktailImage} /> */}
       </div>
       <div className="selectedCocktail__content">
         <Heading coloring='black' heading={cocktailName} />
