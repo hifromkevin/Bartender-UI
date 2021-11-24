@@ -1,20 +1,13 @@
 .homepage
   // background-image: linear-gradient(0deg, rgba(255, 0, 150, 0.3), rgba(255, 0, 150, 0.3)), url('../assets/gradient_bg.jpg')
-
-  // background-color: #310e68
   // background-image: linear-gradient(316deg, #310e68 0%, #5f0f40 74%)
-
-  // background-color: #7a7adb
   // background-image: linear-gradient(315deg, #7a7adb 0%, #170e13 74%)
-
   // background-image: radial-gradient(at 0% 30%, #aff6cf 0%, #9f98e8 100%)
-
-  // background-color: #42378f
   // background-image: linear-gradient(315deg, #42378f 0%, #f53844 74%)
-
   // background-image: radial-gradient(#bdd4e7 0%, #8693ab 74%)
-
+  // background-image: radial-gradient(at 30% 0, #2a2a72 0%, #009F86 74%)
   // background-image: linear-gradient(326deg, #a4508b 0%, #330b46 74%)
+  // background-image: radial-gradient(at 25%40%, #b1bfd8 0%, #6782b4 74%)
   // background-image: url('../assets/x.jpg')
 
   background-image: radial-gradient(at 50% 30%,#310e68 0%, #5f0f40 74%)
@@ -24,7 +17,7 @@
   height: 100%
   width: 100%
   &__logo
-    background-color: $cerulean
+    background-color: $primary
     color: $white
     display: inline-block
     font-size: $largerHeading
@@ -60,7 +53,7 @@
     &:hover
       opacity: 100%
   &__tag
-    background-color: $ceruleanFade
+    background-color: $primaryFade
     // border-bottom: 3px solid $white
     bottom: 0
     box-sizing: border-box
@@ -103,7 +96,7 @@
 //     &:hover
 //       opacity: 100%
 //   &__tag
-//     background-color: $ceruleanFade
+//     background-color: $primaryFade
 //     border-bottom: 3px solid $white
 //     bottom: 0
 //     box-sizing: border-box
@@ -146,22 +139,17 @@
         height: 300px
     &__tag
       align-items: center
-      background-color: $ceruleanFade
+      background-color: $orange
       border-bottom: 3px solid $white
       border-top: 3px solid $white
       box-sizing: border-box
       color: $white
       display: flex
       flex-direction: column
-      justify-content: center
-      font-family: sans-serif
       height: 300px
-      max-width: 265px
+      justify-content: center
       padding: 5%
       text-align: center
-
-      // &:hover
-      //   padding-bottom: 20%
       &__description
         font-size: $standard
         letter-spacing: 2px
