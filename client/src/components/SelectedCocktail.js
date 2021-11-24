@@ -8,6 +8,7 @@ const SelectedCocktail = (props) => {
     cocktail: {
       cocktailName,
       cocktailDescription,
+      cocktailGarnishes,
       cocktailImage,
       cocktailIngredients,
       cocktailSteps
@@ -31,12 +32,13 @@ const SelectedCocktail = (props) => {
     <div className="selectedCocktail">
       <div className="selectedCocktail__display" style={styling}></div>
       <div className="selectedCocktail__content">
+        <div className="box"></div>
         <Heading coloring='black' heading={cocktailName} />
 
         {cocktailIngredients &&
           <div className="selectedCocktail__content__ingredients">
             {cocktailIngredients.map((ingredient, ingredientIndex) => (
-              <div key={ingredientIndex}>
+              <div className="selectedCocktail__content__ingredients__single" key={ingredientIndex}>
                 {`${ingredient.ingredientAmount} ${ingredient.ingredientName}`}
               </div>)
             )}
@@ -47,13 +49,33 @@ const SelectedCocktail = (props) => {
           <h2>Garnish</h2>
         </div> */}
         {cocktailSteps &&
-          <div className="selectedCocktail__content__steps">
-            {cocktailSteps.map((step, stepIndex) => (
-              fancyNumber(stepIndex + 1, step)
-            ))
-            }
+          <div className="selectedCocktail__content__section">
+            <div className="selectedCocktail__content__section__title">Instructions</div>
+            <div className="selectedCocktail__content__section__underline"></div>
+            <div className="selectedCocktail__content__steps">
+              {cocktailSteps.map((step, stepIndex) => (
+                fancyNumber(stepIndex + 1, step)
+              ))
+              }
+            </div>
           </div>
         }
+
+        {cocktailGarnishes &&
+          <div className="selectedCocktail__content__section">
+            <div className="selectedCocktail__content__section__title">What You'll Need</div>
+            <div className="selectedCocktail__content__section__underline"></div>
+            <div className="selectedCocktail__content__garnish">
+              {cocktailGarnishes.map((garnish, i) => (
+                <div className="selectedCocktail__content__garnish__item">
+                  <img className="selectedCocktail__content__garnish__icon" src={garnish.garnishImage} />
+                  <p className="selectedCocktail__content__garnish__name">{garnish.garnishName}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        }
+
         <div className="selectedCocktail__content__options">
           <span className="selectedCocktail__content__options__bottomsUp">Bottoms Up</span>
           <a onClick={() => setSelectedPage('homepage')}>Go Back</a>
