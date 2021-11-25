@@ -15,7 +15,7 @@ const App = () => {
     stations: [
       {
         id: 0,
-        channelName: 'Channel 1',
+        stationName: 'Station 1',
         gpioPinNumber: 4,
         selectedMixer: 'Absolut',
         selectedMixerImage: 'assets/images/mixers/absolut.jpg',
@@ -23,7 +23,7 @@ const App = () => {
       },
       {
         id: 1,
-        channelName: 'Channel 2',
+        stationName: 'Station 2',
         gpioPinNumber: 17,
         selectedMixer: 'St. George Spiced Pear',
         selectedMixerImage: 'assets/images/mixers/absolut.jpg',
@@ -31,7 +31,7 @@ const App = () => {
       },
       {
         id: 2,
-        channelName: 'Channel 3',
+        stationName: 'Station 3',
         gpioPinNumber: 27,
         selectedMixer: null,
         selectedMixerImage: null,
@@ -39,7 +39,7 @@ const App = () => {
       },
       {
         id: 3,
-        channelName: 'Channel 4',
+        stationName: 'Station 4',
         gpioPinNumber: 22,
         selectedMixer: null,
         selectedMixerImage: null,
@@ -47,7 +47,7 @@ const App = () => {
       },
       {
         id: 4,
-        channelName: 'Channel 5',
+        stationName: 'Station 5',
         gpioPinNumber: 10,
         selectedMixer: null,
         selectedMixerImage: null,
@@ -55,7 +55,7 @@ const App = () => {
       },
       {
         id: 5,
-        channelName: 'Channel 6',
+        stationName: 'Station 6',
         gpioPinNumber: 9,
         selectedMixer: null,
         selectedMixerImage: null,
@@ -63,7 +63,7 @@ const App = () => {
       },
       {
         id: 6,
-        channelName: 'Channel 7',
+        stationName: 'Station 7',
         gpioPinNumber: 11,
         selectedMixer: null,
         selectedMixerImage: null,
@@ -71,7 +71,7 @@ const App = () => {
       },
       {
         id: 7,
-        channelName: 'Channel 8',
+        stationName: 'Station 8',
         gpioPinNumber: 5,
         selectedMixer: null,
         selectedMixerImage: null,
