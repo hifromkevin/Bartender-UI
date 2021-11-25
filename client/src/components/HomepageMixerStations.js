@@ -3,7 +3,7 @@ import React from 'react';
 
 import Heading from './Heading';
 
-const HomepageMixerstations = ({ stations }) => (
+const HomepageMixerStations = ({ clickStation, selectedMixers, stations }) => (
   <div className='station'>
     <Heading coloring='white' heading='Mixer Stations' />
     <div className='station__list'>
@@ -11,7 +11,7 @@ const HomepageMixerstations = ({ stations }) => (
         <div
           className='mixerContainer'
           key={stationIndex}
-          onClick={() => setSelectedPage('selectedStation', station)}
+          onClick={() => clickStation(station)}
         >
           <span className='station__name'>{station.stationName}</span>
 
@@ -21,7 +21,7 @@ const HomepageMixerstations = ({ stations }) => (
               src={station.selectedMixerImage || 'assets/images/mixers/bottle.jpg'}
             />
             <div className='mixer__tag'>
-              <span className='mixer__tag__type'>{station.selectedMixerType || 'No Selection'}</span>
+              <span className='mixer__tag__type'>{station.selectedMixerCategory || 'No Selection'}</span>
               <span className='mixer__tag__brand'>{station.selectedMixer || 'Select Mixer'}</span>
             </div>
           </div>
@@ -31,4 +31,4 @@ const HomepageMixerstations = ({ stations }) => (
   </div>
 );
 
-export default HomepageMixerstations;
+export default HomepageMixerStations;
