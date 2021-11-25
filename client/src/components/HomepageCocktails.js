@@ -7,7 +7,7 @@ const HomepageCocktails = ({ cocktails, setSelectedPage }) => (
   <div className='cocktailStation'>
     <Heading coloring='white' heading='Available Cocktails' />
     <div className='cocktailStation__container'>
-      <div className='cocktailStation__list' style={{ width: (cocktails.length * 475) }}>
+      <div className='cocktailStation__list' style={{ width: (cocktails.length * 410) }}>
         {cocktails.map((cocktail, cocktailIndex) => (
           <div
             className='cocktail'
