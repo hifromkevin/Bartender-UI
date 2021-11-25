@@ -51,8 +51,10 @@
         width: 10%
     &__garnish
       display: flex
+      flex-wrap: wrap
       justify-content: space-evenly
-      width: 100%
+      &__item
+        margin: 2% 3%
       &__name
         font-size: $x-small
       &__icon
@@ -92,6 +94,6 @@
     border-color: transparent
     border-style: solid
   &::after
-    border-width: 5.35em
+    border-width: 4.35em
     border-right-color: $primary
     border-top-color: $primary
