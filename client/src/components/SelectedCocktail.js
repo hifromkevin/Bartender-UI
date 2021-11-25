@@ -22,11 +22,13 @@ const SelectedCocktail = (props) => {
     'backgroundSize': 'cover'
   }
 
-  const fancyNumber = (num, instruction) => {
-    if (num < 10) num = `0${num}`;
-
-    return <div className="selectedCocktail__content__step"><span className="selectedCocktail__content__step__number">{num}</span> <span>{instruction}</span></div>
-  }
+  const fancyNumber = (num, instruction, key) => (
+    <div className="selectedCocktail__content__step" key={key}>
+      <span
+        className="selectedCocktail__content__step__number"
+      >{(num < 10) ? `0${num}` : num}</span> <span>{instruction}</span>
+    </div>
+  );
 
   return (
     <div className="selectedCocktail">
@@ -45,16 +47,13 @@ const SelectedCocktail = (props) => {
           </div>
         }
         <div className="selectedCocktail__content__description">{cocktailDescription}</div>
-        {/* <div className="selectedCocktail__content__garnish">
-          <h2>Garnish</h2>
-        </div> */}
         {cocktailSteps &&
           <div className="selectedCocktail__content__section">
             <div className="selectedCocktail__content__section__title">Instructions</div>
             <div className="selectedCocktail__content__section__underline"></div>
             <div className="selectedCocktail__content__steps">
               {cocktailSteps.map((step, stepIndex) => (
-                fancyNumber(stepIndex + 1, step)
+                fancyNumber(stepIndex + 1, step, stepIndex)
               ))
               }
             </div>
@@ -66,8 +65,8 @@ const SelectedCocktail = (props) => {
             <div className="selectedCocktail__content__section__title">What You'll Need</div>
             <div className="selectedCocktail__content__section__underline"></div>
             <div className="selectedCocktail__content__garnish">
-              {cocktailGarnishes.map((garnish, i) => (
-                <div className="selectedCocktail__content__garnish__item">
+              {cocktailGarnishes.map((garnish, garnishIndex) => (
+                <div className="selectedCocktail__content__garnish__item" key={garnishIndex}>
                   <img className="selectedCocktail__content__garnish__icon" src={garnish.garnishImage} />
                   <p className="selectedCocktail__content__garnish__name">{garnish.garnishName}</p>
                 </div>
