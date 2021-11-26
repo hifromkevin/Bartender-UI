@@ -35,7 +35,6 @@ const Homepage = (props) => {
           station={selectedStation}
           updateStation={updateStation}
         />}
-      {console.log('himom', bartenderState)}
     </div>
   );
 };
