@@ -86,7 +86,6 @@ const App = () => {
   });
 
   const clickStation = (station) => {
-
     const { selectedMixers } = bartenderState;
     const { selectedMixer } = station;
 
@@ -150,7 +149,6 @@ const App = () => {
         })
       );
     });
-
   };
 
   const hideModal = () => setBartenderState(
@@ -160,6 +158,28 @@ const App = () => {
       isModalDisplayed: false
     })
   );
+
+  const makeListOfStations = (ingredients) => {
+    const { stations } = bartenderState;
+
+    const listOfStations = [];
+
+    ingredients.forEach((ingredient) => {
+      for (let i = 0; i < stations.length; i++) {
+        if (stations[i].selectedMixerCategory === ingredient.ingredientName) {
+          listOfStations.push(stations[i]);
+        }
+      }
+    });
+
+    return listOfStations;
+  }
+
+  const pourMeADrinkAPI = (listOfStations) => {
+    // Send list of stations to server API
+    // Get number of seconds as response, set it to state
+    console.log(listOfStations);
+  };
 
   const setSelectedPage = (pg, data) => setBartenderState(
     state => ({
@@ -210,7 +230,12 @@ const App = () => {
 
   switch (selectedPage) {
     case 'selectedCocktail':
-      return <SelectedCocktail setSelectedPage={setSelectedPage} cocktail={selectedCocktail} />
+      return <SelectedCocktail
+        cocktail={selectedCocktail}
+        makeListOfStations={makeListOfStations}
+        pourMeADrinkAPI={pourMeADrinkAPI}
+        setSelectedPage={setSelectedPage}
+      />
     case 'homepage':
     default:
       return (
@@ -219,7 +244,9 @@ const App = () => {
           hideModal={hideModal}
           isModalDisplayed={isModalDisplayed}
           listOfAvailableCocktails={listOfAvailableCocktails}
+          makeListOfStations={makeListOfStations}
           mixerLength={mixers.length}
+          pourMeADrinkAPI={pourMeADrinkAPI}
           selectedMixers={selectedMixers}
           selectedStation={selectedStation}
           stations={stations}

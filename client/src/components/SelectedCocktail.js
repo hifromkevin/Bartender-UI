@@ -13,6 +13,8 @@ const SelectedCocktail = (props) => {
       cocktailIngredients,
       cocktailSteps
     },
+    makeListOfStations,
+    pourMeADrinkAPI,
     setSelectedPage
   } = props;
 
@@ -76,7 +78,10 @@ const SelectedCocktail = (props) => {
         }
 
         <div className="selectedCocktail__content__options">
-          <span className="selectedCocktail__content__options__bottomsUp">Bottoms Up</span>
+          <span
+            className="selectedCocktail__content__options__bottomsUp"
+            onClick={() => pourMeADrinkAPI(makeListOfStations(cocktailIngredients))}
+          >Bottoms Up</span>
           <a onClick={() => setSelectedPage('homepage')}>Go Back</a>
         </div>
       </div>
