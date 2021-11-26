@@ -20,6 +20,7 @@ const SelectedStationModal = (props) => {
   return (
     <Modal
       className='selectedStationModal'
+      closeTimeoutMS={3000}
       isOpen={isModalDisplayed}
       ariaHideApp={false}
       overlayClassName='selectedStationModal__overlay'
@@ -34,7 +35,7 @@ const SelectedStationModal = (props) => {
         <div className='selectedStationModal__list' style={{ width: ((mixerLength - selectedMixers.length) * 215) }}>
           {mixers.map((mixer, index) => (
             <MixerDisplay
-              index={index}
+              key={index}
               mixer={mixer}
               selectedMixers={selectedMixers}
               station={station}

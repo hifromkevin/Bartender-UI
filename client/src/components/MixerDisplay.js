@@ -1,7 +1,15 @@
 import 'babel-polyfill';
 import React from 'react';
 
-const MixerDisplay = ({ index, mixer, selectedMixers, station, updateStation }) => {
+const MixerDisplay = (props) => {
+
+  const {
+    mixer,
+    selectedMixers,
+    station,
+    updateStation
+  } = props;
+
   // If the mixer has already been used, we do not want it to appear
   for (let i = 0; i < selectedMixers.length; i++) {
     if (selectedMixers[i].mixerName === mixer.mixerName) return null;
@@ -11,7 +19,6 @@ const MixerDisplay = ({ index, mixer, selectedMixers, station, updateStation }) 
     <div
       className='selectedStationModal__mixer'
       onClick={() => updateStation(mixer, station.id)}
-      key={index}
     >
       <div
         className='selectedStationModal__image'
