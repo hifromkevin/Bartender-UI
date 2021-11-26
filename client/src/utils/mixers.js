@@ -15,7 +15,7 @@ const mixers = [
     mixerImage: 'assets/images/mixers/cranberry-juice.jpg'
   },
   {
-    mixerCategory: 'Tequila',
+    mixerCategory: 'Tequila Blanco',
     mixerName: 'Don Julio Blanco Tequila',
     mixerImage: 'assets/images/mixers/don-julio-blanco-tequila.jpg'
   },
@@ -58,6 +58,11 @@ const mixers = [
     mixerCategory: 'Chocolate Liqueur',
     mixerName: 'Dorda Chocolate Liqueur',
     mixerImage: 'assets/images/mixers/dorda-chocolate-liqueur.jpg'
+  },
+  {
+    mixerCategory: 'Grenadine',
+    mixerName: 'De Kuyper Grenadine',
+    mixerImage: 'assets/images/mixers/grenadine.jpg'
   },
 ];
 
