@@ -212,21 +212,18 @@ const App = () => {
     case 'homepage':
     default:
       return (
-        <>
-          <Homepage
-            clickStation={clickStation}
-            hideModal={hideModal}
-            isModalDisplayed={isModalDisplayed}
-            listOfAvailableCocktails={listOfAvailableCocktails}
-            mixerLength={mixers.length}
-            selectedMixers={selectedMixers}
-            selectedStation={selectedStation}
-            stations={stations}
-            setSelectedPage={setSelectedPage}
-            updateStation={updateStation}
-          />
-          {console.log('himom!!!!', listOfAvailableCocktails)}
-        </>
+        <Homepage
+          clickStation={clickStation}
+          hideModal={hideModal}
+          isModalDisplayed={isModalDisplayed}
+          listOfAvailableCocktails={listOfAvailableCocktails}
+          mixerLength={mixers.length}
+          selectedMixers={selectedMixers}
+          selectedStation={selectedStation}
+          stations={stations}
+          setSelectedPage={setSelectedPage}
+          updateStation={updateStation}
+        />
       );
   }
 
