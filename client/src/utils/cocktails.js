@@ -234,7 +234,7 @@ const cocktails = [
         garnishImage: 'assets/images/icons/ice.png',
       },
     ],
-    cocktailImage: 'assets/images/cocktails/hella-tasty.jpg',
+    cocktailImage: 'assets/images/cocktails/gin-and-tonic.jpg',
     cocktailIngredients: [
       {
         ingredientName: 'Gin',
