@@ -9,7 +9,6 @@ import cocktails from '../utils/cocktails';
 
 const Homepage = (props) => {
   const {
-    bartenderState,
     clickStation,
     hideModal,
     isModalDisplayed,
