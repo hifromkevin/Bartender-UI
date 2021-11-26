@@ -96,19 +96,53 @@ const cocktails = [
     ]
   },
   {
-    cocktailName: 'Fancy Name with More Text',
-    cocktailDescription: 'Leverage agile frame works to provide a robust synopsis for high level overviews.',
-    cocktailImage: 'assets/images/cocktails/hella-tasty.jpg'
+    cocktailName: 'Vodka Cranberry',
+    cocktailDescription: 'You might think the Vodka Cranberry drink is simply vodka and cranberry juice,  but this drink actually has four ingredients that are important to the flavor.',
+    cocktailGarnishes: [
+      {
+        garnishName: 'Ice Cubes',
+        garnishImage: 'assets/images/icons/ice.png',
+      },
+      {
+        garnishName: 'Lime Wheel',
+        garnishImage: 'assets/images/icons/wedge.png',
+      },
+      {
+        garnishName: 'Lime Juice',
+        garnishImage: 'assets/images/icons/wedge.png',
+      },
+    ],
+    cocktailImage: 'assets/images/cocktails/vodka-cranberry.jpg',
+    cocktailIngredients: [
+      {
+        ingredientName: 'Vodka',
+        ingredientAmount: '1 oz'
+      },
+      {
+        ingredientName: 'Cranberry Juice',
+        ingredientAmount: '4.5 oz'
+      },
+      {
+        ingredientName: 'Orange Juice',
+        ingredientAmount: '0.5 oz'
+      }
+    ],
   },
   {
     cocktailName: 'Fancy Name 4',
     cocktailDescription: 'Leverage agile frame works to provide a robust synopsis for high level overviews.',
-    cocktailImage: 'assets/images/cocktails/hella-tasty.jpg'
+    cocktailGarnishes: [],
+    cocktailImage: 'assets/images/cocktails/hella-tasty.jpg',
+    cocktailIngredients: [],
+    cocktailSteps: []
   },
   {
     cocktailName: 'Fancy Name 5',
     cocktailDescription: 'Leverage agile frame works to provide a robust synopsis for high level overviews.',
-    cocktailImage: 'assets/images/cocktails/hella-tasty.jpg'
+    cocktailGarnishes: [],
+    cocktailImage: 'assets/images/cocktails/hella-tasty.jpg',
+    cocktailIngredients: [],
+    cocktailSteps: []
   }
 ]
 
