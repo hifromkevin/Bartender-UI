@@ -5,12 +5,15 @@ import mixers from '../utils/mixers';
 import Homepage from './Homepage';
 import SelectedCocktail from './SelectedCocktail';
 
+import cocktails from '../utils/cocktails';
+
 const App = () => {
   const [
     bartenderState,
     setBartenderState
   ] = useState({
     isModalDisplayed: false,
+    listOfAvailableCocktails: [],
     stations: [
       {
         id: 0,
@@ -105,6 +108,49 @@ const App = () => {
     );
   };
 
+  const createListOfAvailableCocktails = (newestMixer) => {
+    let { listOfAvailableCocktails, selectedMixers } = bartenderState;
+
+    const sendTrueIfMixerIsNotIncluded = (ingredient) => {
+      for (let i = 0; i < selectedMixers.length; i++) {
+        if (selectedMixers[i].mixerCategory === ingredient) return false;
+      };
+      return true;
+    };
+
+
+    // Cycle through all of the available cocktails
+    cocktails.forEach(cocktail => {
+      const { cocktailName, cocktailIngredients } = cocktail;
+      let allIngredientsAvailable = true;
+
+      if (!cocktailIngredients.length) allIngredientsAvailable = false;
+
+      // Loop cocktailIngredients
+      for (let i = 0; i < cocktailIngredients.length; i++) {
+        const { ingredientName } = cocktailIngredients[i];
+
+        // If an ingredient is NOT on the list of mixers, end cycle and go to the next cocktail. 
+        if (sendTrueIfMixerIsNotIncluded(ingredientName) && ingredientName !== newestMixer) {
+          allIngredientsAvailable = false;
+          break;
+        };
+      };
+
+      if (allIngredientsAvailable) listOfAvailableCocktails = [...listOfAvailableCocktails, cocktail];
+
+      //If all ingredients are cycled through, and they are all on the list of available mixers, 
+      // add it to a list of available cocktails that can be chosen by the user. 
+      setBartenderState(
+        state => ({
+          ...state,
+          listOfAvailableCocktails: listOfAvailableCocktails
+        })
+      );
+    });
+
+  };
+
   const hideModal = () => setBartenderState(
     state => ({
       ...state,
@@ -147,10 +193,18 @@ const App = () => {
 
     // Modal closes
     hideModal();
-    // createListOfCocktails(CommonUtils.camelizeWords(mixerName));
+    createListOfAvailableCocktails(mixer.mixerName);
   };
 
-  const { isModalDisplayed, stations, selectedCocktail, selectedMixers, selectedPage, selectedStation } = bartenderState;
+  const {
+    isModalDisplayed,
+    listOfAvailableCocktails,
+    selectedCocktail,
+    selectedMixers,
+    selectedPage,
+    selectedStation,
+    stations,
+  } = bartenderState;
 
   switch (selectedPage) {
     case 'selectedCocktail':
@@ -158,17 +212,21 @@ const App = () => {
     case 'homepage':
     default:
       return (
-        <Homepage
-          clickStation={clickStation}
-          hideModal={hideModal}
-          isModalDisplayed={isModalDisplayed}
-          mixerLength={mixers.length}
-          selectedMixers={selectedMixers}
-          selectedStation={selectedStation}
-          stations={stations}
-          setSelectedPage={setSelectedPage}
-          updateStation={updateStation}
-        />
+        <>
+          <Homepage
+            clickStation={clickStation}
+            hideModal={hideModal}
+            isModalDisplayed={isModalDisplayed}
+            listOfAvailableCocktails={listOfAvailableCocktails}
+            mixerLength={mixers.length}
+            selectedMixers={selectedMixers}
+            selectedStation={selectedStation}
+            stations={stations}
+            setSelectedPage={setSelectedPage}
+            updateStation={updateStation}
+          />
+          {console.log('himom!!!!', listOfAvailableCocktails)}
+        </>
       );
   }
 

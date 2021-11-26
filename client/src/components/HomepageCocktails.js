@@ -8,7 +8,7 @@ const HomepageCocktails = ({ cocktails, setSelectedPage }) => (
     <Heading coloring='white' heading='Available Cocktails' />
     <div className='cocktailStation__container'>
       <div className='cocktailStation__list' style={{ width: (cocktails.length * 410) }}>
-        {cocktails.map((cocktail, cocktailIndex) => (
+        {cocktails.length && cocktails.map((cocktail, cocktailIndex) => (
           <div
             className='cocktail'
             key={cocktailIndex}
@@ -27,6 +27,7 @@ const HomepageCocktails = ({ cocktails, setSelectedPage }) => (
           </div>
         ))}
       </div>
+      {!cocktails.length && <p className="cocktailStation__unavailable">Add mixers to create a list of cocktails</p>}
     </div>
   </div>
 );

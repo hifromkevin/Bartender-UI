@@ -12,6 +12,7 @@ const Homepage = (props) => {
     clickStation,
     hideModal,
     isModalDisplayed,
+    listOfAvailableCocktails,
     mixerLength,
     selectedMixers,
     selectedStation,
@@ -24,16 +25,18 @@ const Homepage = (props) => {
     <div className='homepage'>
       <h1 className='homepage__logo'>Bartender</h1>
       <HomepageMixerStations clickStation={clickStation} selectedMixers={selectedMixers} stations={stations} />
-      <HomepageCocktails cocktails={cocktails} setSelectedPage={setSelectedPage} />
-      {selectedStation
-        && <SelectedStationModal
+      <HomepageCocktails cocktails={listOfAvailableCocktails} setSelectedPage={setSelectedPage} />
+      {
+        selectedStation &&
+        <SelectedStationModal
           hideModal={hideModal}
           isModalDisplayed={isModalDisplayed}
           mixerLength={mixerLength}
           selectedMixers={selectedMixers}
           station={selectedStation}
           updateStation={updateStation}
-        />}
+        />
+      }
     </div>
   );
 };
