@@ -111,13 +111,15 @@ const App = () => {
   const createListOfAvailableCocktails = (newestMixer) => {
     let { listOfAvailableCocktails, selectedMixers } = bartenderState;
 
+    // zero out list of available cocktails to prevent repeats / a mixer being replaced
+    listOfAvailableCocktails = [];
+
     const sendTrueIfMixerIsNotIncluded = (ingredient) => {
       for (let i = 0; i < selectedMixers.length; i++) {
         if (selectedMixers[i].mixerCategory === ingredient) return false;
       };
       return true;
     };
-
 
     // Cycle through all of the available cocktails
     cocktails.forEach(cocktail => {
