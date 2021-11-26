@@ -27,7 +27,7 @@ const mixers = [
   {
     mixerCategory: 'Gin',
     mixerName: 'Bombay Sapphire Gin',
-    mixerImage: 'assets/images/mixers/absolut.jpg'
+    mixerImage: 'assets/images/mixers/bombay-gin.jpg'
   },
   {
     mixerCategory: 'Tonic',
