@@ -131,7 +131,7 @@ const cocktails = [
   },
   {
     cocktailName: 'Vodka Tonic',
-    cocktailDescription: 'Looking for a refreshing cocktail that goes down easy? Try the vodka tonic! This variation on the Gin & Tonic is less about the booze and more about citrusy bubbles.',
+    cocktailDescription: 'Looking for a refreshing cocktail that goes down easy? Try the vodka tonic!',
     cocktailGarnishes: [
       {
         garnishName: 'Highball Glass',
@@ -154,7 +154,7 @@ const cocktails = [
         garnishImage: 'assets/images/icons/ice.png',
       },
     ],
-    cocktailImage: 'assets/images/cocktails/hella-tasty.jpg',
+    cocktailImage: 'assets/images/cocktails/vodka-tonic.jpg',
     cocktailIngredients: [
       {
         ingredientName: 'Vodka',
