@@ -92,7 +92,17 @@ const App = () => {
 
   const clickStation = (station) => {
 
-    // To add: Check list of selected mixers
+    const { selectedMixers } = bartenderState;
+    const { selectedMixer } = station;
+
+    if (selectedMixer) {
+      for (var i = 0; i < selectedMixers.length; i++) {
+        if (selectedMixers[i].mixerName === selectedMixer) {
+          selectedMixers.splice(i, 1);
+          break;
+        }
+      }
+    }
 
     setBartenderState(
       state => ({
@@ -117,20 +127,12 @@ const App = () => {
       selectedMixers
     } = bartenderState;
 
-
-    // Update list of selected mixers
-    // Now we know what the mixer is called, and where to find it by stations
-    // Adding stations ID number for easy stations lookup
-    // selectedMixers = [...selectedMixers, {
-    //   mixer: CommonUtils.camelizeWords(mixer),
-    //   gpioPinNumber: stations[stationsIdNumber].gpioPinNumber,
-    //   stationsIdNumber
-    // }];
-
-    // save the mixer to the stations
-    stations[stationIdNumber].selectedMixer = mixer.mixerName
-    stations[stationIdNumber].selectedMixerImage = mixer.mixerImage
-    stations[stationIdNumber].selectedMixerCategory = mixer.mixerCategory
+    stations[stationIdNumber] = {
+      ...stations[stationIdNumber],
+      selectedMixer: mixer.mixerName,
+      selectedMixerImage: mixer.mixerImage,
+      selectedMixerCategory: mixer.mixerCategory
+    }
 
     selectedMixers.push(mixer);
 
@@ -157,7 +159,6 @@ const App = () => {
     default:
       return (
         <Homepage
-          bartenderState={bartenderState}
           clickStation={clickStation}
           hideModal={hideModal}
           isModalDisplayed={isModalDisplayed}
