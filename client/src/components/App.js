@@ -82,14 +82,6 @@ const App = () => {
     selectedStation: null,
   });
 
-  const setSelectedPage = (pg, data) => setBartenderState(
-    state => ({
-      ...state,
-      selectedPage: pg,
-      [pg]: data
-    })
-  );
-
   const clickStation = (station) => {
 
     const { selectedMixers } = bartenderState;
@@ -118,6 +110,14 @@ const App = () => {
       ...state,
       selectedStation: null,
       isModalDisplayed: false
+    })
+  );
+
+  const setSelectedPage = (pg, data) => setBartenderState(
+    state => ({
+      ...state,
+      selectedPage: pg,
+      [pg]: data
     })
   );
 
