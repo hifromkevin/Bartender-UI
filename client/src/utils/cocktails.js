@@ -127,14 +127,51 @@ const cocktails = [
         ingredientAmount: '0.5 oz'
       }
     ],
+    cocktailSteps: []
   },
   {
-    cocktailName: 'Fancy Name 4',
-    cocktailDescription: 'Leverage agile frame works to provide a robust synopsis for high level overviews.',
-    cocktailGarnishes: [],
+    cocktailName: 'Vodka Tonic',
+    cocktailDescription: 'Looking for a refreshing cocktail that goes down easy? Try the vodka tonic! This variation on the Gin & Tonic is less about the booze and more about citrusy bubbles.',
+    cocktailGarnishes: [
+      {
+        garnishName: 'Highball Glass',
+        garnishImage: 'assets/images/icons/cocktail.png',
+      },
+      {
+        garnishName: 'Lime Wedge',
+        garnishImage: 'assets/images/icons/wedge.png',
+      },
+      {
+        garnishName: 'Lemon Juice',
+        garnishImage: 'assets/images/icons/wedge.png',
+      },
+      {
+        garnishName: 'Lime Juice',
+        garnishImage: 'assets/images/icons/wedge.png',
+      },
+      {
+        garnishName: 'Ice Cubes',
+        garnishImage: 'assets/images/icons/ice.png',
+      },
+    ],
     cocktailImage: 'assets/images/cocktails/hella-tasty.jpg',
-    cocktailIngredients: [],
-    cocktailSteps: []
+    cocktailIngredients: [
+      {
+        ingredientName: 'Vodka',
+        ingredientAmount: '1.5 oz'
+      },
+      {
+        ingredientName: 'Tonic',
+        ingredientAmount: '4 oz'
+      }
+    ],
+    cocktailSteps: [
+      'Fill a highball glass with ice',
+      'Insert highball glass into bartender',
+      'Squeeze in the juice from 1 lemon wedge and 1 lime wedge',
+      'Add the squeezed wedges into the drink',
+      'Add another lime wedge to the glass as a garnish.'
+    ]
   },
   {
     cocktailName: 'Fancy Name 5',
