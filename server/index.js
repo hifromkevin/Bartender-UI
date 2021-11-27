@@ -20,12 +20,14 @@ app.post('/makeDrink', (req, res) => {
   let timeframe = 0;
 
   // Amount of oz divided by oz/second
-  const pourInmL = (oz) => (oz * 29.5735) / 10;
+  const pourInmL = (oz) => (oz * 29.5735) / 20;
 
   // This will eventually stop the GPIO pin from running
   // For now, this is simulated in the console
   const turnOffChannel = (ingredient, pin) => {
+
     // new Gpio(pin, 'out').unexport();
+
     console.log(`Turning Off Pin ${pin}: `, ingredient);
   };
 

@@ -1,0 +1,46 @@
+import 'babel-polyfill';
+import React from 'react';
+import Modal from 'react-modal';
+
+import Heading from './Heading';
+import MixerDisplay from './MixerDisplay';
+
+import mixers from '../utils/mixers';
+
+const CocktailProgressModal = (props) => {
+  const {
+    cocktailName,
+    hideModal,
+    isCocktailProgressModalDisplayed,
+    serverResponse
+  } = props;
+
+  return (
+    <Modal
+      className='modalDisplay'
+      isOpen={isCocktailProgressModalDisplayed}
+      ariaHideApp={false}
+      overlayClassName='modalDisplay__overlay'
+    >
+      <Heading coloring='black' heading={cocktailName} />
+      <div className="modalDisplay__listTitle">
+        <span>Select a Mixer</span>
+        <div className="modalDisplay__listTitle__underline"></div>
+      </div>
+
+      <div className='modalDisplay__container'>
+        <div
+          className='modalDisplay__list'
+        >
+          `Serve Time: ${serverResponse}`
+        </div>
+      </div>
+      <br />
+      <hr />
+      <p onClick={() => hideModal('isCocktailProgressModalDisplayed')}>Close</p>
+    </Modal>
+  )
+
+};
+
+export default CocktailProgressModal;

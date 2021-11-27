@@ -12,7 +12,8 @@ const App = () => {
     bartenderState,
     setBartenderState
   ] = useState({
-    isModalDisplayed: false,
+    isCocktailProgressModalDisplayed: false,
+    isStationModalDisplayed: false,
     listOfAvailableCocktails: [],
     stations: [
       {
@@ -102,7 +103,7 @@ const App = () => {
       state => ({
         ...state,
         selectedStation: station,
-        isModalDisplayed: true
+        isStationModalDisplayed: true
       })
     );
   };
@@ -151,11 +152,11 @@ const App = () => {
     });
   };
 
-  const hideModal = () => setBartenderState(
+  const hideModal = (closeModalBool) => setBartenderState(
     state => ({
       ...state,
       selectedStation: null,
-      isModalDisplayed: false
+      [closeModalBool]: false
     })
   );
 
@@ -194,10 +195,19 @@ const App = () => {
         console.log('Data Response: ', data)
         setBartenderState(state => ({
           ...state,
-          dataResponse: data.timeframe
+          serverResponse: data.timeframe
         }))
       })
       .catch(err => console.log('uh oh', err))
+  }
+
+  const revealCocktailProgressModal = () => {
+    setBartenderState(
+      state => ({
+        ...state,
+        isCocktailProgressModalDisplayed: true
+      })
+    );
   }
 
   const setSelectedPage = (pg, data) => setBartenderState(
@@ -238,30 +248,38 @@ const App = () => {
   };
 
   const {
-    isModalDisplayed,
+    isCocktailProgressModalDisplayed,
+    isStationModalDisplayed,
     listOfAvailableCocktails,
     selectedCocktail,
     selectedMixers,
     selectedPage,
     selectedStation,
+    serverResponse,
     stations,
   } = bartenderState;
 
   switch (selectedPage) {
     case 'selectedCocktail':
-      return <SelectedCocktail
-        cocktail={selectedCocktail}
-        makeListOfStations={makeListOfStations}
-        pourMeADrinkAPI={pourMeADrinkAPI}
-        setSelectedPage={setSelectedPage}
-      />
+      return (
+        <SelectedCocktail
+          cocktail={selectedCocktail}
+          hideModal={hideModal}
+          isCocktailProgressModalDisplayed={isCocktailProgressModalDisplayed}
+          makeListOfStations={makeListOfStations}
+          pourMeADrinkAPI={pourMeADrinkAPI}
+          revealCocktailProgressModal={revealCocktailProgressModal}
+          serverResponse={serverResponse}
+          setSelectedPage={setSelectedPage}
+        />
+      )
     case 'homepage':
     default:
       return (
         <Homepage
           clickStation={clickStation}
           hideModal={hideModal}
-          isModalDisplayed={isModalDisplayed}
+          isStationModalDisplayed={isStationModalDisplayed}
           listOfAvailableCocktails={listOfAvailableCocktails}
           makeListOfStations={makeListOfStations}
           mixerLength={mixers.length}

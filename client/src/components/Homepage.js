@@ -11,7 +11,7 @@ const Homepage = (props) => {
   const {
     clickStation,
     hideModal,
-    isModalDisplayed,
+    isStationModalDisplayed,
     listOfAvailableCocktails,
     mixerLength,
     selectedMixers,
@@ -24,13 +24,20 @@ const Homepage = (props) => {
   return (
     <div className='homepage'>
       <h1 className='homepage__logo'>Bartender</h1>
-      <HomepageMixerStations clickStation={clickStation} selectedMixers={selectedMixers} stations={stations} />
-      <HomepageCocktails cocktails={listOfAvailableCocktails} setSelectedPage={setSelectedPage} />
+      <HomepageMixerStations
+        clickStation={clickStation}
+        selectedMixers={selectedMixers}
+        stations={stations}
+      />
+      <HomepageCocktails
+        cocktails={listOfAvailableCocktails}
+        setSelectedPage={setSelectedPage}
+      />
       {
         selectedStation &&
         <SelectedStationModal
           hideModal={hideModal}
-          isModalDisplayed={isModalDisplayed}
+          isStationModalDisplayed={isStationModalDisplayed}
           mixerLength={mixerLength}
           selectedMixers={selectedMixers}
           station={selectedStation}
