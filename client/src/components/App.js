@@ -165,11 +165,11 @@ const App = () => {
     const listOfStations = [];
 
     ingredients.forEach((ingredient) => {
-      const { ingredientAmount, ingredientName } = ingredient;
+      const { ingredientAmountInOunces, ingredientName } = ingredient;
       for (let i = 0; i < stations.length; i++) {
         if (stations[i].selectedMixerCategory === ingredientName) {
           const { gpioPinNumber, selectedMixer, stationName } = stations[i];
-          listOfStations.push({ gpioPinNumber, ingredientAmount, selectedMixer, stationName });
+          listOfStations.push({ gpioPinNumber, ingredientAmountInOunces, selectedMixer, stationName });
         }
       }
     });
@@ -180,8 +180,6 @@ const App = () => {
   const pourMeADrinkAPI = async (pins) => {
     // Send list of stations to server API
     // Get number of seconds as response, set it to state
-    console.log(pins);
-
     const getPins = { pins };
 
     await fetch('/makeDrink', {

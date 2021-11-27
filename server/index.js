@@ -19,7 +19,8 @@ app.post('/makeDrink', (req, res) => {
   // to pour drink and make cocktail
   let timeframe = 0;
 
-  const pourInmL = (oz) => (oz * 29.5735);
+  // Amount of oz divided by oz/second
+  const pourInmL = (oz) => (oz * 29.5735) / 10;
 
   // This will eventually stop the GPIO pin from running
   // For now, this is simulated in the console
@@ -34,16 +35,16 @@ app.post('/makeDrink', (req, res) => {
   for (let i = 0; i < foundPins.length; i++) {
     const {
       gpioPinNumber,
-      ingredientAmount,
+      ingredientAmountInOunces,
       selectedMixer,
       stationName
     } = foundPins[i];
 
     // new Gpio(gpioPinNumber, 'out');
 
-    timeframe = Math.max(timeframe, pourInmL(ingredientAmount));
-    console.log(`Firing ${stationName}: `, selectedMixer, pourInmL(ingredientAmount));
-    setTimeout(() => turnOffChannel(selectedMixer, gpioPinNumber), pourInmL(ingredientAmount));
+    timeframe = Math.max(timeframe, pourInmL(ingredientAmountInOunces));
+    console.log(`Firing ${stationName}: `, selectedMixer, pourInmL(ingredientAmountInOunces));
+    setTimeout(() => turnOffChannel(selectedMixer, gpioPinNumber), pourInmL(ingredientAmountInOunces));
   };
 
   // Sends the amount of time, to be handled on the front-end by the progress bar

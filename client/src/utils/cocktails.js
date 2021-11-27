@@ -28,15 +28,15 @@ const cocktails = [
     cocktailIngredients: [
       {
         ingredientName: 'Vodka',
-        ingredientAmount: '1.5 oz'
+        ingredientAmountInOunces: '1.5'
       },
       {
         ingredientName: 'Cranberry Juice',
-        ingredientAmount: '2 oz'
+        ingredientAmountInOunces: '2'
       },
       {
         ingredientName: 'Other Stuff',
-        ingredientAmount: '0.5 oz'
+        ingredientAmountInOunces: '0.5'
       },
     ],
     cocktailSteps: [
@@ -68,23 +68,23 @@ const cocktails = [
     cocktailIngredients: [
       {
         ingredientName: 'Vodka',
-        ingredientAmount: '1.5 oz'
+        ingredientAmountInOunces: '1.5'
       },
       {
         ingredientName: 'Cranberry Juice',
-        ingredientAmount: '2 oz'
+        ingredientAmountInOunces: '2'
       },
       {
         ingredientName: 'Other Stuff',
-        ingredientAmount: '0.5 oz'
+        ingredientAmountInOunces: '0.5'
       },
       {
         ingredientName: 'Bitters',
-        ingredientAmount: '2 oz'
+        ingredientAmountInOunces: '2'
       },
       {
         ingredientName: 'More Stuff',
-        ingredientAmount: '1.5 oz'
+        ingredientAmountInOunces: '1.5'
       },
     ],
     cocktailSteps: [
@@ -116,15 +116,15 @@ const cocktails = [
     cocktailIngredients: [
       {
         ingredientName: 'Vodka',
-        ingredientAmount: '1 oz'
+        ingredientAmountInOunces: '1'
       },
       {
         ingredientName: 'Cranberry Juice',
-        ingredientAmount: '4.5 oz'
+        ingredientAmountInOunces: '4.5'
       },
       {
         ingredientName: 'Orange Juice',
-        ingredientAmount: '0.5 oz'
+        ingredientAmountInOunces: '0.5'
       }
     ],
     cocktailSteps: [
@@ -163,11 +163,11 @@ const cocktails = [
     cocktailIngredients: [
       {
         ingredientName: 'Vodka',
-        ingredientAmount: '1.5 oz'
+        ingredientAmountInOunces: '1.5'
       },
       {
         ingredientName: 'Tonic',
-        ingredientAmount: '4 oz'
+        ingredientAmountInOunces: '4'
       }
     ],
     cocktailSteps: [
@@ -199,15 +199,15 @@ const cocktails = [
     cocktailIngredients: [
       {
         ingredientName: 'Tequila Blanco',
-        ingredientAmount: '2 oz'
+        ingredientAmountInOunces: '2'
       },
       {
         ingredientName: 'Orange Juice',
-        ingredientAmount: '4 oz'
+        ingredientAmountInOunces: '4'
       },
       {
         ingredientName: 'Grenadine',
-        ingredientAmount: '0.25 oz'
+        ingredientAmountInOunces: '0.25'
       }
     ],
     cocktailSteps: [
@@ -238,11 +238,11 @@ const cocktails = [
     cocktailIngredients: [
       {
         ingredientName: 'Gin',
-        ingredientAmount: '2 oz'
+        ingredientAmountInOunces: '2'
       },
       {
         ingredientName: 'Tonic',
-        ingredientAmount: '4 oz'
+        ingredientAmountInOunces: '4'
       }
     ],
     cocktailSteps: [

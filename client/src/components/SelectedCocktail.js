@@ -43,7 +43,7 @@ const SelectedCocktail = (props) => {
           <div className="selectedCocktail__content__ingredients">
             {cocktailIngredients.map((ingredient, ingredientIndex) => (
               <div className="selectedCocktail__content__ingredients__single" key={ingredientIndex}>
-                {`${ingredient.ingredientAmount} ${ingredient.ingredientName}`}
+                {`${ingredient.ingredientAmountInOunces}oz ${ingredient.ingredientName}`}
               </div>)
             )}
           </div>
