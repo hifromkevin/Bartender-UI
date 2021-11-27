@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const port = 3005;
+const Gpio = require('onoff').Gpio;
 
 app.use(bodyParser.json());
 
@@ -18,7 +19,35 @@ app.post('/makeDrink', (req, res) => {
   // to pour drink and make cocktail
   let timeframe = 0;
 
-  const pourInmL = (oz) => (oz * 29.5735)
+  const pourInmL = (oz) => (oz * 29.5735);
+
+  // This will eventually stop the GPIO pin from running
+  // For now, this is simulated in the console
+  const turnOffChannel = (ingredient, pin) => {
+    // new Gpio(pin, 'out').unexport();
+    console.log(`Turning Off Pin ${pin}: `, ingredient);
+  };
+
+  // Loop through each station
+  // Gather the timeframe required for the longest pour, send to front-end
+  // After the given time, turn off the channel
+  for (let i = 0; i < foundPins.length; i++) {
+    const {
+      gpioPinNumber,
+      ingredientAmount,
+      selectedMixer,
+      stationName
+    } = foundPins[i];
+
+    // new Gpio(gpioPinNumber, 'out');
+
+    timeframe = Math.max(timeframe, pourInmL(ingredientAmount));
+    console.log(`Firing ${stationName}: `, selectedMixer, pourInmL(ingredientAmount));
+    setTimeout(() => turnOffChannel(selectedMixer, gpioPinNumber), pourInmL(ingredientAmount));
+  };
+
+  // Sends the amount of time, to be handled on the front-end by the progress bar
+  res.status(200).send({ timeframe });
 
 }, (err, response) => {
   if (!err && response.statusCode == 200) {

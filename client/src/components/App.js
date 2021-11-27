@@ -165,9 +165,11 @@ const App = () => {
     const listOfStations = [];
 
     ingredients.forEach((ingredient) => {
+      const { ingredientAmount, ingredientName } = ingredient;
       for (let i = 0; i < stations.length; i++) {
-        if (stations[i].selectedMixerCategory === ingredient.ingredientName) {
-          listOfStations.push(stations[i]);
+        if (stations[i].selectedMixerCategory === ingredientName) {
+          const { gpioPinNumber, selectedMixer, stationName } = stations[i];
+          listOfStations.push({ gpioPinNumber, ingredientAmount, selectedMixer, stationName });
         }
       }
     });
@@ -175,11 +177,30 @@ const App = () => {
     return listOfStations;
   }
 
-  const pourMeADrinkAPI = (listOfStations) => {
+  const pourMeADrinkAPI = async (pins) => {
     // Send list of stations to server API
     // Get number of seconds as response, set it to state
-    console.log(listOfStations);
-  };
+    console.log(pins);
+
+    const getPins = { pins };
+
+    await fetch('/makeDrink', {
+      method: 'POST',
+      body: JSON.stringify(getPins),
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Data Response: ', data)
+        setBartenderState(state => ({
+          ...state,
+          dataResponse: data.timeframe
+        }))
+      })
+      .catch(err => console.log('uh oh', err))
+  }
 
   const setSelectedPage = (pg, data) => setBartenderState(
     state => ({
