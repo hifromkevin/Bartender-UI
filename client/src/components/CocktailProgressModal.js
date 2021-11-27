@@ -3,7 +3,7 @@ import React from 'react';
 import Modal from 'react-modal';
 
 import Heading from './Heading';
-import MixerDisplay from './MixerDisplay';
+import ProgressBar from './ProgressBar';
 
 import mixers from '../utils/mixers';
 
@@ -23,16 +23,16 @@ const CocktailProgressModal = (props) => {
       overlayClassName='modalDisplay__overlay'
     >
       <Heading coloring='black' heading={cocktailName} />
-      <div className="modalDisplay__listTitle">
+      <div className='modalDisplay__listTitle'>
         <span>Select a Mixer</span>
-        <div className="modalDisplay__listTitle__underline"></div>
+        <div className='modalDisplay__listTitle__underline'></div>
       </div>
 
       <div className='modalDisplay__container'>
         <div
           className='modalDisplay__list'
         >
-          `Serve Time: ${serverResponse}`
+          <ProgressBar time={serverResponse} />
         </div>
       </div>
       <br />
