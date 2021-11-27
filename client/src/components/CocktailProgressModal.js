@@ -22,9 +22,9 @@ const CocktailProgressModal = (props) => {
       ariaHideApp={false}
       overlayClassName='modalDisplay__overlay'
     >
-      <Heading coloring='black' heading={cocktailName} />
+      <Heading coloring='black' heading='Bottoms Up!' />
       <div className='modalDisplay__listTitle'>
-        <span>Select a Mixer</span>
+        <span>{`Pouring Your ${cocktailName}`}</span>
         <div className='modalDisplay__listTitle__underline'></div>
       </div>
 
