@@ -10,7 +10,7 @@ import mixers from '../utils/mixers';
 const SelectedStationModal = (props) => {
   const {
     hideModal,
-    isModalDisplayed,
+    isStationModalDisplayed,
     mixerLength,
     selectedMixers,
     station,
@@ -19,20 +19,20 @@ const SelectedStationModal = (props) => {
 
   return (
     <Modal
-      className='selectedStationModal'
-      closeTimeoutMS={3000}
-      isOpen={isModalDisplayed}
+      className='modalDisplay'
+      closeTimeoutMS={1000}
+      isOpen={isStationModalDisplayed}
       ariaHideApp={false}
-      overlayClassName='selectedStationModal__overlay'
+      overlayClassName='modalDisplay__overlay'
     >
       <Heading coloring='black' heading={station.stationName} />
-      <div className="selectedStationModal__listTitle">
+      <div className="modalDisplay__listTitle">
         <span>Select a Mixer</span>
-        <div className="selectedStationModal__listTitle__underline"></div>
+        <div className="modalDisplay__listTitle__underline"></div>
       </div>
 
-      <div className='selectedStationModal__container'>
-        <div className='selectedStationModal__list' style={{ width: ((mixerLength - selectedMixers.length) * 215) }}>
+      <div className='modalDisplay__container'>
+        <div className='modalDisplay__mixerList' style={{ width: ((mixerLength - selectedMixers.length) * 215) }}>
           {mixers.map((mixer, index) => (
             <MixerDisplay
               key={index}
@@ -46,7 +46,7 @@ const SelectedStationModal = (props) => {
       </div>
       <br />
       <hr />
-      <p onClick={hideModal}>Close</p>
+      <p onClick={() => hideModal('isStationModalDisplayed')}>Close</p>
     </Modal>
   )
 

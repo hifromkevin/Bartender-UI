@@ -17,18 +17,18 @@ const MixerDisplay = (props) => {
 
   return (
     <div
-      className='selectedStationModal__mixer'
+      className='modalDisplay__mixer'
       onClick={() => updateStation(mixer, station.id)}
     >
       <div
-        className='selectedStationModal__image'
+        className='modalDisplay__image'
         style={{
           'backgroundImage': mixer.mixerImage ? `url(${mixer.mixerImage})` : `url('assets/images/mixers/bottle.jpg')`,
         }}
       ></div>
-      <div className='selectedStationModal__tag'>
-        <span className='selectedStationModal__tag__type'>{mixer.mixerCategory || 'No Selection'}</span>
-        <span className='selectedStationModal__tag__brand'>{mixer.mixerName || 'Select Mixer'}</span>
+      <div className='modalDisplay__tag'>
+        <span className='modalDisplay__tag__type'>{mixer.mixerCategory || 'No Selection'}</span>
+        <span className='modalDisplay__tag__brand'>{mixer.mixerName || 'Select Mixer'}</span>
       </div>
     </div>
   )
