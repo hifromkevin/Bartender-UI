@@ -64,6 +64,21 @@ const mixers = [
     mixerName: 'De Kuyper Grenadine',
     mixerImage: 'assets/images/mixers/grenadine.jpg'
   },
+  {
+    mixerCategory: 'Creme de Cocoa',
+    mixerName: 'De Kuyper Creme de Cocoa',
+    mixerImage: 'assets/images/mixers/dekuyper-creme-de-cocoa.jpg'
+  },
+  {
+    mixerCategory: 'Ginger Beer',
+    mixerName: 'Fever Tree Ginger Beer',
+    mixerImage: 'assets/images/mixers/fever-tree-ginger-beer.jpg'
+  },
+  {
+    mixerCategory: 'Lime Juice',
+    mixerName: 'Fresh Lime Juice',
+    mixerImage: 'assets/images/mixers/lime-juice.jpg'
+  },
 ];
 
 export default mixers;

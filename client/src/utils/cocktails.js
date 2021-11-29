@@ -151,10 +151,6 @@ const cocktails = [
         garnishImage: 'assets/images/icons/wedge.png',
       },
       {
-        garnishName: 'Lime Juice',
-        garnishImage: 'assets/images/icons/wedge.png',
-      },
-      {
         garnishName: 'Ice Cubes',
         garnishImage: 'assets/images/icons/ice.png',
       },
@@ -249,6 +245,103 @@ const cocktails = [
       'Fill a highball glass with ice, then add the gin',
       'Top with the tonic water and gently stir',
       'Garnish with lime wheels or seasonal garnishes'
+    ]
+  },
+  {
+    cocktailName: 'Chocolate Martini',
+    cocktailDescription: 'The ultimate yet simple chocolate martini made with vodka, creme de cocoa, and liqueur.',
+    cocktailGarnishes: [
+      {
+        garnishName: 'Chilled Glass',
+        garnishImage: 'assets/images/icons/cocktail.png',
+      },
+      {
+        garnishName: 'Chocolate Sauce',
+        garnishImage: 'assets/images/icons/cocktail.png',
+      },
+      {
+        garnishName: '0.5 oz Light Cream',
+        garnishImage: 'assets/images/icons/ice.png',
+      },
+      {
+        garnishName: 'Grated Chocolate',
+        garnishImage: 'assets/images/icons/ice.png',
+      },
+    ],
+    cocktailImage: 'assets/images/cocktails/chocolatini.jpg',
+    cocktailIngredients: [
+      {
+        ingredientName: 'Creme de Cocoa',
+        ingredientAmountInOunces: '1'
+      },
+      {
+        ingredientName: 'Vanilla Vodka',
+        ingredientAmountInOunces: '1'
+      },
+      {
+        ingredientName: 'Chocolate Liqueur',
+        ingredientAmountInOunces: '1'
+      },
+    ],
+    cocktailSteps: [
+      'Twirl chocolate sauce around a glass, slowly turning the glass and working from bottom to top',
+      'Insert a shaker into the bartender with 0.5 oz light cream',
+      'Top with grated chocolate'
+    ]
+  },
+  {
+    cocktailName: 'Rum and Coke',
+    cocktailDescription: 'lorem ipsum',
+    cocktailGarnishes: [],
+    cocktailImage: 'assets/images/cocktails/rum-and-coke.jpg',
+    cocktailIngredients: [
+      {
+        ingredientName: 'Dark Rum',
+        ingredientAmountInOunces: '2'
+      },
+      {
+        ingredientName: 'Coke',
+        ingredientAmountInOunces: '4'
+      }
+    ],
+    cocktailSteps: []
+  },
+  {
+    cocktailName: 'Moscow Mule',
+    cocktailDescription: 'The Moscow Mule is a classic vodka-based cocktail that is popular for good reason: It’s delicious, refreshing and a snap to make.',
+    cocktailGarnishes: [
+      {
+        garnishName: 'Moscow Mule Mug',
+        garnishImage: 'assets/images/icons/cocktail.png',
+      },
+      {
+        garnishName: 'Ice Cubes',
+        garnishImage: 'assets/images/icons/ice.png',
+      },
+      {
+        garnishName: 'Lime Wheel',
+        garnishImage: 'assets/images/icons/wedge.png',
+      },
+    ],
+    cocktailImage: 'assets/images/cocktails/moscow-mule.jpg',
+    cocktailIngredients: [
+      {
+        ingredientName: 'Vodka',
+        ingredientAmountInOunces: '2'
+      },
+      {
+        ingredientName: 'Ginger Beer',
+        ingredientAmountInOunces: '3'
+      },
+      {
+        ingredientName: 'Lime Juice',
+        ingredientAmountInOunces: '0.5'
+      },
+    ],
+    cocktailSteps: [
+      'Fill a Moscow Mule mug with ice',
+      'Insert mug into the bartender',
+      'Garnish with a lime wheel'
     ]
   },
   {
