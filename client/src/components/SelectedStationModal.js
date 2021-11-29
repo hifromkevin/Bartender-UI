@@ -25,10 +25,16 @@ const SelectedStationModal = (props) => {
       ariaHideApp={false}
       overlayClassName='modalDisplay__overlay'
     >
-      <Heading coloring='black' heading={station.stationName} />
-      <div className="modalDisplay__listTitle">
+      <span
+        className='modalDisplay__close'
+        onClick={() => hideModal('isCocktailProgressModalDisplayed')}
+      >X</span>
+      <div className='modalDisplay__heading'>
+        <Heading coloring='black' heading={station.stationName} />
+      </div>
+      <div className='modalDisplay__listTitle'>
         <span>Select a Mixer</span>
-        <div className="modalDisplay__listTitle__underline"></div>
+        <div className='modalDisplay__listTitle__underline'></div>
       </div>
 
       <div className='modalDisplay__container'>
@@ -46,7 +52,6 @@ const SelectedStationModal = (props) => {
       </div>
       <br />
       <hr />
-      <p onClick={() => hideModal('isStationModalDisplayed')}>Close</p>
     </Modal>
   )
 

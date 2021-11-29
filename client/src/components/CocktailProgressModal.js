@@ -22,7 +22,13 @@ const CocktailProgressModal = (props) => {
       ariaHideApp={false}
       overlayClassName='modalDisplay__overlay'
     >
-      <Heading coloring='black' heading='Bottoms Up!' />
+      <span
+        className='modalDisplay__close'
+        onClick={() => hideModal('isCocktailProgressModalDisplayed')}
+      >X</span>
+      <div className='modalDisplay__heading'>
+        <Heading coloring='black' heading='Bottoms Up!' />
+      </div>
       <div className='modalDisplay__listTitle'>
         <span>{`Pouring Your ${cocktailName}`}</span>
         <div className='modalDisplay__listTitle__underline'></div>
@@ -37,8 +43,7 @@ const CocktailProgressModal = (props) => {
       </div>
       <br />
       <hr />
-      <p onClick={() => hideModal('isCocktailProgressModalDisplayed')}>Close</p>
-    </Modal>
+    </Modal >
   )
 
 };

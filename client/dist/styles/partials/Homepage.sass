@@ -68,14 +68,21 @@
       display: block
       letter-spacing: 1px
 
+.hello
+  color: #000
+
 .cocktailStation
   width: 95%
   margin: 10px 0 10px auto
+  transition: color 2s
   &__container
     width: 100%
     overflow: scroll
     &::-webkit-scrollbar
       display: none
+    &:hover .hello
+      transition: color 2s
+      color: #f90
   &__list
     overflow: scroll
   &__unavailable

@@ -90,17 +90,22 @@ const SelectedCocktail = (props) => {
                 pourMeADrinkAPI(makeListOfStations(cocktailIngredients));
                 revealCocktailProgressModal();
               }}>Bottoms Up</span>
-            <a onClick={() => setSelectedPage('homepage')}>Go Back</a>
+            <a
+              className="selectedCocktail__content__options__goBack"
+              onClick={() => setSelectedPage('homepage')}
+            >Go Back</a>
           </div>
         </div>
       </div>
 
-      <CocktailProgressModal
-        cocktailName={cocktailName}
-        hideModal={hideModal}
-        isCocktailProgressModalDisplayed={isCocktailProgressModalDisplayed}
-        serverResponse={serverResponse}
-      />
+      {serverResponse &&
+        <CocktailProgressModal
+          cocktailName={cocktailName}
+          hideModal={hideModal}
+          isCocktailProgressModalDisplayed={isCocktailProgressModalDisplayed}
+          serverResponse={serverResponse}
+        />
+      }
     </>
   );
 };
