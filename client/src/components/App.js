@@ -123,7 +123,7 @@ const App = () => {
 
     // Cycle through all of the available cocktails
     cocktails.forEach(cocktail => {
-      const { cocktailName, cocktailIngredients } = cocktail;
+      const { cocktailIngredients } = cocktail;
       let allIngredientsAvailable = true;
 
       if (!cocktailIngredients.length) allIngredientsAvailable = false;
@@ -146,7 +146,7 @@ const App = () => {
       setBartenderState(
         state => ({
           ...state,
-          listOfAvailableCocktails: listOfAvailableCocktails
+          listOfAvailableCocktails
         })
       );
     });
@@ -192,7 +192,6 @@ const App = () => {
     })
       .then(response => response.json())
       .then(data => {
-        console.log('Data Response: ', data)
         setBartenderState(state => ({
           ...state,
           serverResponse: data.timeframe
@@ -224,11 +223,17 @@ const App = () => {
       selectedMixers
     } = bartenderState;
 
+    const {
+      mixerCategory,
+      mixerImage,
+      mixerName
+    } = mixer;
+
     stations[stationIdNumber] = {
       ...stations[stationIdNumber],
-      selectedMixer: mixer.mixerName,
-      selectedMixerImage: mixer.mixerImage,
-      selectedMixerCategory: mixer.mixerCategory
+      selectedMixer: mixerName,
+      selectedMixerImage: mixerImage,
+      selectedMixerCategory: mixerCategory
     }
 
     selectedMixers.push(mixer);
@@ -244,7 +249,7 @@ const App = () => {
 
     // Modal closes
     hideModal();
-    createListOfAvailableCocktails(mixer.mixerName);
+    createListOfAvailableCocktails(mixerName);
   };
 
   const {
