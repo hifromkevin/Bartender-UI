@@ -308,7 +308,7 @@ const cocktails = [
   },
   {
     cocktailName: 'Moscow Mule',
-    cocktailDescription: 'The Moscow Mule is a classic vodka-based cocktail that is popular for good reason: It’s delicious, refreshing and a snap to make.',
+    cocktailDescription: 'The Moscow Mule cocktail is a classic vodka drink with the bite of ginger beer. Dedicated to MonAye!',
     cocktailGarnishes: [
       {
         garnishName: 'Moscow Mule Mug',
