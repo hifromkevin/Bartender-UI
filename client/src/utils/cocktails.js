@@ -42,7 +42,7 @@ const cocktails = [
     cocktailSteps: [
       'Grab a shaker.',
       'Fill shaker with ice.',
-      'Insert shaker into bartender.',
+      'Place shaker into bartender.',
       'Pour into old fashion glass.',
       'Garnish with an orange wedge.'
     ]
@@ -90,7 +90,7 @@ const cocktails = [
     cocktailSteps: [
       'Grab a shaker.',
       'Fill shaker with ice.',
-      'Insert shaker into bartender.',
+      'Place shaker into bartender.',
       'Pour into old fashion glass.',
       'Garnish with an orange wedge.'
     ]
@@ -129,7 +129,7 @@ const cocktails = [
     ],
     cocktailSteps: [
       'Fill a highball glass with ice',
-      'Insert highball glass into bartender',
+      'Place highball glass into bartender',
       'Squeeze some lime juice',
       'Add a lime wheel to garnish'
     ]
@@ -168,7 +168,7 @@ const cocktails = [
     ],
     cocktailSteps: [
       'Fill a highball glass with ice',
-      'Insert highball glass into bartender',
+      'Place highball glass into bartender',
       'Squeeze in the juice from 1 lemon wedge and 1 lime wedge',
       'Add the squeezed wedges into the drink',
       'Add another lime wedge to the glass as a garnish.'
@@ -208,7 +208,7 @@ const cocktails = [
     ],
     cocktailSteps: [
       'Fill a highball glass with ice',
-      'Insert highball glass into bartender', // grenadine to be served last, 
+      'Place highball glass into bartender', // grenadine to be served last, 
       'Garnish with orange slice and cherry'
 
     ]
@@ -285,7 +285,7 @@ const cocktails = [
     ],
     cocktailSteps: [
       'Twirl chocolate sauce around a glass, slowly turning the glass and working from bottom to top',
-      'Insert a shaker into the bartender with 0.5 oz light cream',
+      'Place a shaker into the bartender with 0.5 oz light cream',
       'Top with grated chocolate'
     ]
   },
@@ -340,7 +340,7 @@ const cocktails = [
     ],
     cocktailSteps: [
       'Fill a Moscow Mule mug with ice',
-      'Insert mug into the bartender',
+      'Place mug into the bartender',
       'Garnish with a lime wheel'
     ]
   },

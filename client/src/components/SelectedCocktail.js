@@ -89,7 +89,7 @@ const SelectedCocktail = (props) => {
               onClick={() => {
                 pourMeADrinkAPI(makeListOfStations(cocktailIngredients));
                 revealCocktailProgressModal();
-              }}>Bottoms Up</span>
+              }}>Cheers!</span>
             <a
               className="selectedCocktail__content__options__goBack"
               onClick={() => setSelectedPage('homepage')}

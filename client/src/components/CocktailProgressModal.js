@@ -27,7 +27,7 @@ const CocktailProgressModal = (props) => {
         onClick={() => hideModal('isCocktailProgressModalDisplayed')}
       >X</span>
       <div className='modalDisplay__heading'>
-        <Heading coloring='black' heading='Bottoms Up!' />
+        <Heading coloring='black' heading='Cheers!' />
       </div>
       <div className='modalDisplay__listTitle'>
         <span>{`Pouring Your ${cocktailName}`}</span>
