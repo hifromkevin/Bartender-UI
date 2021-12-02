@@ -85,7 +85,7 @@ const SelectedCocktail = (props) => {
 
           <div className="selectedCocktail__content__options">
             <span
-              className="selectedCocktail__content__options__bottomsUp"
+              className="selectedCocktail__content__options__cheers"
               onClick={() => {
                 pourMeADrinkAPI(makeListOfStations(cocktailIngredients));
                 revealCocktailProgressModal();
