@@ -345,12 +345,38 @@ const cocktails = [
     ]
   },
   {
-    cocktailName: 'Drink',
-    cocktailDescription: 'lorem ipsum',
-    cocktailGarnishes: [],
-    cocktailImage: 'assets/images/cocktails/hella-tasty.jpg',
-    cocktailIngredients: [],
-    cocktailSteps: []
+    cocktailName: 'Vodka Soda',
+    cocktailDescription: 'In the storied canon of two-ingredient drinks, none has enjoyed the stature of the Vodka Soda.',
+    cocktailGarnishes: [
+      {
+        garnishName: 'Rocks Glass',
+        garnishImage: 'assets/images/icons/cocktail.png',
+      },
+      {
+        garnishName: 'Ice Cubes',
+        garnishImage: 'assets/images/icons/ice.png',
+      },
+      {
+        garnishName: 'Lime Wedge',
+        garnishImage: 'assets/images/icons/wedge.png',
+      },
+    ],
+    cocktailImage: 'assets/images/cocktails/vodka-soda.jpg',
+    cocktailIngredients: [
+      {
+        ingredientName: 'Vodka',
+        ingredientAmountInOunces: '1.5'
+      },
+      {
+        ingredientName: 'Club Soda',
+        ingredientAmountInOunces: '3'
+      },
+    ],
+    cocktailSteps: [
+      'Fill a Rocks Glass with ice',
+      'Place glass into the bartender',
+      'Garnish with a lime wedge'
+    ]
   },
   {
     cocktailName: 'Drink',

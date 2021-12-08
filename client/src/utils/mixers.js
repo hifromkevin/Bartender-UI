@@ -5,6 +5,11 @@ const mixers = [
     mixerImage: 'assets/images/mixers/absolut.jpg'
   },
   {
+    mixerCategory: 'Vodka',
+    mixerName: 'Round Rock Vodka',
+    mixerImage: 'assets/images/mixers/round-rock-vodka.jpg'
+  },
+  {
     mixerCategory: 'Vanilla Vodka',
     mixerName: 'Stoli Vanil Vodka',
     mixerImage: 'assets/images/mixers/stoli-vanil.jpg'
@@ -33,6 +38,11 @@ const mixers = [
     mixerCategory: 'Tonic',
     mixerName: 'Tonic',
     mixerImage: 'assets/images/mixers/tonic.jpg'
+  },
+  {
+    mixerCategory: 'Club Soda',
+    mixerName: 'Club Soda',
+    mixerImage: 'assets/images/mixers/signature-select-club-soda.jpg'
   },
   {
     mixerCategory: 'Dark Rum',
