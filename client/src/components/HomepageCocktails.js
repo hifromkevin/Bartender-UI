@@ -7,7 +7,8 @@ const HomepageCocktails = ({ cocktails, setSelectedPage }) => (
   <div className='cocktailStation'>
     <Heading coloring='white' heading='Available Cocktails' />
     <div className='cocktailStation__container'>
-      <div className='cocktailStation__list' style={{ width: (cocktails.length * 410) }}>
+      {/* This assumes 60vh ~= 288px */}
+      <div className='cocktailStation__list' style={{ width: (cocktails.length * 300) }}>
         {cocktails.length && cocktails.map((cocktail, cocktailIndex) => {
           const heroImage = {
             'backgroundImage': `url(${cocktail.cocktailImage})`,

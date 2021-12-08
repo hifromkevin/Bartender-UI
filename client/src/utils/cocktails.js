@@ -49,7 +49,7 @@ const cocktails = [
   },
   {
     cocktailName: 'Fancy Name 2',
-    cocktailDescription: 'Longer Text.  Leverage agile frame works to provide a robust synopsis for high level overviews. Leverage agile frame works to provide.',
+    cocktailDescription: 'Longer Text. Leverage agile frame works to provide a robust synopsis for high level overviews. Leverage agile frame works to provide.',
     cocktailGarnishes: [
       {
         garnishName: 'Cocktail Glass',
@@ -97,7 +97,7 @@ const cocktails = [
   },
   {
     cocktailName: 'Vodka Cranberry',
-    cocktailDescription: 'You might think the Vodka Cranberry drink is simply vodka and cranberry juice,  but this drink actually has four ingredients that are important to the flavor.',
+    cocktailDescription: 'The Vodka Cranberry is a very simple drink to make, but it\'s so delicious.',
     cocktailGarnishes: [
       {
         garnishName: 'Ice Cubes',

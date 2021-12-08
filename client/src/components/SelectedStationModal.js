@@ -38,7 +38,8 @@ const SelectedStationModal = (props) => {
       </div>
 
       <div className='modalDisplay__container'>
-        <div className='modalDisplay__mixerList' style={{ width: ((mixerLength - selectedMixers.length) * 215) }}>
+        {/* This assumes 50vh ~= 240px */}
+        <div className='modalDisplay__mixerList' style={{ width: ((mixerLength - selectedMixers.length) * 254) }}>
           {mixers.map((mixer, index) => (
             <MixerDisplay
               key={index}
