@@ -26,7 +26,7 @@ app.post('/makeDrink', (req, res) => {
   // For now, this is simulated in the console
   const turnOffChannel = (ingredient, pin) => {
 
-    // new Gpio(pin, 'out').unexport();
+    new Gpio(pin, 'out').unexport();
 
     console.log(`Turning Off Pin ${pin}: `, ingredient);
   };
@@ -42,7 +42,7 @@ app.post('/makeDrink', (req, res) => {
       stationName
     } = foundPins[i];
 
-    // new Gpio(gpioPinNumber, 'out');
+    new Gpio(gpioPinNumber, 'out');
 
     timeframe = Math.max(timeframe, pourInmL(ingredientAmountInOunces));
     console.log(`Firing ${stationName}: `, selectedMixer, pourInmL(ingredientAmountInOunces));
