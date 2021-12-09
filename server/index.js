@@ -24,9 +24,11 @@ app.post('/makeDrink', (req, res) => {
 
   // This will eventually stop the GPIO pin from running
   // For now, this is simulated in the console
-  const turnOffChannel = (ingredient, pin) => {
+  const turnOffChannel = (ingredient, pin, fired) => {
 
-    new Gpio(pin, 'out').unexport();
+    // new Gpio(pin, 'out').unexport();
+    fired.writeSync(0);
+    fired.unexport();
 
     console.log(`Turning Off Pin ${pin}: `, ingredient);
   };
@@ -42,11 +44,15 @@ app.post('/makeDrink', (req, res) => {
       stationName
     } = foundPins[i];
 
-    new Gpio(gpioPinNumber, 'out');
+    // new Gpio(gpioPinNumber, 'out');
+
+    const firedGpioPin = new Gpio(gpioPinNumber, 'out');
+
+    firedGpioPin.writeSync(1);
 
     timeframe = Math.max(timeframe, pourInmL(ingredientAmountInOunces));
     console.log(`Firing ${stationName}: `, selectedMixer, pourInmL(ingredientAmountInOunces));
-    setTimeout(() => turnOffChannel(selectedMixer, gpioPinNumber), pourInmL(ingredientAmountInOunces));
+    setTimeout(() => turnOffChannel(selectedMixer, gpioPinNumber, firedGpioPin), pourInmL(ingredientAmountInOunces));
   };
 
   // Sends the amount of time, to be handled on the front-end by the progress bar
