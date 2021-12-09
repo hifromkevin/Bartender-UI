@@ -29,9 +29,8 @@ app.post('/makeDrink', (req, res) => {
     // new Gpio(pin, 'out').unexport();
     fired.writeSync(0);
     fired.unexport();
-    new Gpio(pin, 'out').unexport();
 
-    console.log(`Turning Off Pin ${pin}: `, ingredient);
+    console.log(`Turning Off ${stationName}, Pin ${pin}: `, ingredient);
   };
 
   // Loop through each station
@@ -52,7 +51,7 @@ app.post('/makeDrink', (req, res) => {
     firedGpioPin.writeSync(1);
 
     timeframe = Math.max(timeframe, pourInmL(ingredientAmountInOunces));
-    console.log(`Firing ${stationName}: `, selectedMixer, pourInmL(ingredientAmountInOunces));
+    console.log(`Firing ${stationName}, Pin ${gpioPinNumber}: `, selectedMixer, pourInmL(ingredientAmountInOunces));
     setTimeout(() => turnOffChannel(selectedMixer, gpioPinNumber, firedGpioPin), pourInmL(ingredientAmountInOunces));
   };
 
