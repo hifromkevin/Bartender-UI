@@ -26,7 +26,7 @@ app.post('/makeDrink', (req, res) => {
   // For now, this is simulated in the console
   const turnOffChannel = (ingredient, pin, fired) => {
 
-    // new Gpio(pin, 'out').unexport();
+    new Gpio(pin, 'out').unexport();
     fired.writeSync(0);
     fired.unexport();
 
