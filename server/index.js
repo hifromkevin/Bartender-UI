@@ -48,7 +48,8 @@ app.post('/makeDrink', (req, res) => {
 
     const firedGpioPin = new Gpio(gpioPinNumber, 'out');
 
-    firedGpioPin.writeSync(1);
+    // firedGpioPin.writeSync(1);
+    new Gpio(gpioPinNumber, 'out');
 
     timeframe = Math.max(timeframe, pourInmL(ingredientAmountInOunces));
     console.log(`Firing ${stationName}, Pin ${gpioPinNumber}: `, selectedMixer, pourInmL(ingredientAmountInOunces));
