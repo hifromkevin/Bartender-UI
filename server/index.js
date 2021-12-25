@@ -49,12 +49,10 @@ app.post('/makeDrink', (req, res) => {
     const setPin = gpio.export(gpioPinNumber, {
       direction: gpio.DIRECTION.OUT,
       interval: pourInmL(ingredientAmountInOunces) * 1000,
-      ready: () => {
-        console.log(`Firing ${stationName}, Pin ${gpioPinNumber}: `, selectedMixer, pourInmL(ingredientAmountInOunces));
-      }
+      ready: () => console.log(`Firing ${stationName}, Pin ${gpioPinNumber}: `, selectedMixer, pourInmL(ingredientAmountInOunces));
     });
 
-    setPin.set().then(console.log(`Turning Off ${stationName}, Pin ${pin}: `, ingredient));
+    setPin.set();
 
     // const altSetPin = (gpio.export(gpioPinNumber, {
     //   ready: () => {
@@ -65,14 +63,14 @@ app.post('/makeDrink', (req, res) => {
 
     // Sends the amount of time, to be handled on the front-end by the progress bar
     res.status(200).send({ timeframe });
-
-  }, (err, response) => {
-    if (!err && response.statusCode == 200) {
-      res.send(response.statusCode);
-    } else {
-      console.error('That ain\'t right...', err);
-    }
-  });
+  }
+}, (err, response) => {
+  if (!err && response.statusCode == 200) {
+    res.send(response.statusCode);
+  } else {
+    console.error('That ain\'t right...', err);
+  }
+});
 
 app.use(express.static(__dirname + '/../client/dist'));
 
