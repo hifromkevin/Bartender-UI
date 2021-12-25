@@ -40,6 +40,7 @@ app.post('/makeDrink', (req, res) => {
     // Uses onoff
     // But "off" doesn't seem to be working
     const runPin = new Gpio(gpioPinNumber, 'out');
+    runPin;
     runPin.writeSync(1);
     console.log(`Firing ${stationName}, Pin ${gpioPinNumber}: `, selectedMixer, pourInmL(ingredientAmountInOunces));
     setTimeout(() => turnOffChannel(runPin, gpioPinNumber, selectedMixer, stationName), pourInmL(ingredientAmountInOunces));
@@ -64,6 +65,19 @@ app.post('/makeDrink', (req, res) => {
     // Sends the amount of time, to be handled on the front-end by the progress bar
     res.status(200).send({ timeframe });
   }
+  for (let i = 0; i < foundPins.length; i++) {
+    const {
+      gpioPinNumber,
+      ingredientAmountInOunces,
+      selectedMixer,
+      stationName
+    } = foundPins[i];
+
+    const newPinFound = new Gpio(gpioPinNumber, 'out');
+    newPinFound.unexport();
+    newPinFound.writeSync(0);
+  }
+
 }, (err, response) => {
   if (!err && response.statusCode == 200) {
     res.send(response.statusCode);
