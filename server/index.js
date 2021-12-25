@@ -16,14 +16,12 @@ app.post('/makeDrink', (req, res) => {
   const pourInmL = (oz) => (oz * 29.5735) / 20;
 
   // uses onoff
-  // const turnOffChannel = (pin, ingredient, stationName, fired) => {
+  const turnOffChannel = (runningPin, pin, ingredient, stationName) => {
+    runningPin.writeSync(0);
+    runningPin.unexport();
 
-  //   new Gpio(pin, 'out').unexport();
-  //   // fired.writeSync(0);
-  //   // fired.unexport();
-
-  //   console.log(`Turning Off ${stationName}, Pin ${pin}: `, ingredient);
-  // };
+    console.log(`Turning Off ${stationName}, Pin ${pin}: `, ingredient);
+  };
 
   for (let i = 0; i < foundPins.length; i++) {
     const {
@@ -41,18 +39,20 @@ app.post('/makeDrink', (req, res) => {
 
     // Uses onoff
     // But "off" doesn't seem to be working
-    // new Gpio(gpioPinNumber, 'out');
-    // console.log(`Firing ${stationName}, Pin ${gpioPinNumber}: `, selectedMixer, pourInmL(ingredientAmountInOunces));
-    // setTimeout(() => turnOffChannel(gpioPinNumber, selectedMixer, stationName), pourInmL(ingredientAmountInOunces));
+    const runPin = new Gpio(gpioPinNumber, 'out');
+    runPin.writeSync(1);
+    console.log(`Firing ${stationName}, Pin ${gpioPinNumber}: `, selectedMixer, pourInmL(ingredientAmountInOunces));
+    setTimeout(() => turnOffChannel(runPin, gpioPinNumber, selectedMixer, stationName), pourInmL(ingredientAmountInOunces));
 
-    // this uses gpio, not yet tested
-    const setPin = gpio.export(gpioPinNumber, {
-      direction: gpio.DIRECTION.OUT,
-      interval: pourInmL(ingredientAmountInOunces) * 1000,
-      ready: () => console.log(`Firing ${stationName}, Pin ${gpioPinNumber}: `, selectedMixer, pourInmL(ingredientAmountInOunces))
-    });
+    // this uses gpio, also doesn't turn off
+    // console.log('himom!!!', pourInmL(ingredientAmountInOunces));
+    // const setPin = gpio.export(gpioPinNumber, {
+    //   direction: gpio.DIRECTION.OUT,
+    //   interval: pourInmL(ingredientAmountInOunces),
+    //   ready: () => console.log(`Firing ${stationName}, Pin ${gpioPinNumber}: `, selectedMixer, pourInmL(ingredientAmountInOunces))
+    // });
 
-    setPin.set();
+    // setPin.set();
 
     // const altSetPin = (gpio.export(gpioPinNumber, {
     //   ready: () => {
