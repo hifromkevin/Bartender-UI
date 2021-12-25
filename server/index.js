@@ -49,7 +49,7 @@ app.post('/makeDrink', (req, res) => {
     const setPin = gpio.export(gpioPinNumber, {
       direction: gpio.DIRECTION.OUT,
       interval: pourInmL(ingredientAmountInOunces) * 1000,
-      ready: () => console.log(`Firing ${stationName}, Pin ${gpioPinNumber}: `, selectedMixer, pourInmL(ingredientAmountInOunces));
+      ready: () => console.log(`Firing ${stationName}, Pin ${gpioPinNumber}: `, selectedMixer, pourInmL(ingredientAmountInOunces))
     });
 
     setPin.set();
