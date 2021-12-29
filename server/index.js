@@ -9,7 +9,7 @@ const gpio = require('gpio');
 app.use(bodyParser.json());
 
 app.post('/makeDrink', (req, res) => {
-  const foundPins = req.body.pins;
+  const { body: { pins } } = req;
   let timeframe = 0;
 
   // Amount of oz divided by oz/second
@@ -23,13 +23,13 @@ app.post('/makeDrink', (req, res) => {
     console.log(`Turning Off ${stationName}, Pin ${pin}: `, ingredient);
   };
 
-  for (let i = 0; i < foundPins.length; i++) {
+  for (let i = 0; i < pins.length; i++) {
     const {
       gpioPinNumber,
       ingredientAmountInOunces,
       selectedMixer,
       stationName
-    } = foundPins[i];
+    } = pins[i];
 
     const getSeconds = Number(pourInmL(ingredientAmountInOunces));
 
@@ -66,13 +66,13 @@ app.post('/makeDrink', (req, res) => {
     // Sends the amount of time, to be handled on the front-end by the progress bar
     res.status(200).send({ timeframe });
   }
-  for (let i = 0; i < foundPins.length; i++) {
+  for (let i = 0; i < pins.length; i++) {
     const {
       gpioPinNumber,
       ingredientAmountInOunces,
       selectedMixer,
       stationName
-    } = foundPins[i];
+    } = pins[i];
 
     const newPinFound = new Gpio(gpioPinNumber, 'out');
     newPinFound.unexport();
