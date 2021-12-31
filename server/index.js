@@ -64,10 +64,9 @@ app.post('/makeDrink', (req, res) => {
     //     setTimeout(() => turnOffChannel(gpioPinNumber, selectedMixer, stationName), pourInmL(ingredientAmountInOunces));
     //   }
     // }))();
-
-    // Sends the amount of time, to be handled on the front-end by the progress bar
-    res.status(200).send({ timeframe });
   }
+  // Sends the amount of time, to be handled on the front-end by the progress bar
+  res.status(200).send({ timeframe });
 }, (err, response) => {
   if (!err && response.statusCode == 200) {
     res.send(response.statusCode);
