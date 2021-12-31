@@ -17,6 +17,8 @@ app.post('/makeDrink', (req, res) => {
 
   // uses onoff
   const turnOffChannel = (runningPin, pin, ingredient, stationName) => {
+    console.log('TEST', runningPin);
+    console.log('TEST2', runningPin.unexport);
     runningPin.writeSync(0);
     runningPin.unexport();
 
@@ -66,19 +68,6 @@ app.post('/makeDrink', (req, res) => {
     // Sends the amount of time, to be handled on the front-end by the progress bar
     res.status(200).send({ timeframe });
   }
-  for (let i = 0; i < pins.length; i++) {
-    const {
-      gpioPinNumber,
-      ingredientAmountInOunces,
-      selectedMixer,
-      stationName
-    } = pins[i];
-
-    const newPinFound = new Gpio(gpioPinNumber, 'out');
-    newPinFound.unexport();
-    newPinFound.writeSync(0);
-  }
-
 }, (err, response) => {
   if (!err && response.statusCode == 200) {
     res.send(response.statusCode);
