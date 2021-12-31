@@ -19,7 +19,7 @@ const App = () => {
       {
         id: 0,
         stationName: 'Station 1',
-        gpioPinNumber: 4,
+        gpioPinNumber: 26,
         selectedMixer: null,
         selectedMixerImage: null,
         selectedMixerCategory: null
@@ -43,7 +43,7 @@ const App = () => {
       {
         id: 3,
         stationName: 'Station 4',
-        gpioPinNumber: 22,
+        gpioPinNumber: 19,
         selectedMixer: null,
         selectedMixerImage: null,
         selectedMixerCategory: null

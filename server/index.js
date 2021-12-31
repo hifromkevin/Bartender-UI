@@ -31,7 +31,7 @@ app.post('/makeDrink', (req, res) => {
       stationName
     } = pins[i];
 
-    const getSeconds = Number(Math.floor(pourInmL(ingredientAmountInOunces)));
+    const getSeconds = Number(pourInmL(ingredientAmountInOunces));
 
     // uses onoff
     // const firedGpioPin = new Gpio(gpioPinNumber, 'out');
