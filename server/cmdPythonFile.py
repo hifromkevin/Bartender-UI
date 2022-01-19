@@ -15,9 +15,9 @@ def turnOff(pin):
 
 
 # valz = [[19,1.5],[26,3]]
-valz = sys.argv[1]
+valz = sys.argv[1].split()
 
-print('SYS! ' + str(sys.argv[1]))
+print(sys.argv[1])
 
 for i in valz:
   print(i)
