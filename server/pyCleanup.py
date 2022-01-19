@@ -16,7 +16,7 @@ GPIO.setmode(GPIO.BCM)
 # t = Timer(2.0, cleanUp)
 # t.start()
 
-GPIO.cleanup(26)
+GPIO.cleanup()
 
 
 
