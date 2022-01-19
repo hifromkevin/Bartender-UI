@@ -1,5 +1,4 @@
 const { spawn } = require('child_process');
-const { pin } = require('nodemon/lib/version');
 
 const pins = [
   {
@@ -25,6 +24,7 @@ const togglePin = (pinNumber, timer) => {
 
   gpioFunction.on('close', function (code) {
     console.log(code);
+    return true;
   });
 }
 
