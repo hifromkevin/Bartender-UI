@@ -21,7 +21,7 @@ def turnOff():
 t = Timer(2.0, turnOff)
 t.start()
 
-# GPIO.cleanup()
+GPIO.cleanup()
 
 
 
