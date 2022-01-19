@@ -20,7 +20,7 @@ valz = sys.argv[1].split()
 print(sys.argv[1])
 
 for i in valz:
-  print(i)
+  print(i[0])
   # GPIO.setup(i[0], GPIO.OUT, initial=1)
   # turnOnPin(i[0])
 
