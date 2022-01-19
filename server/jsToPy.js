@@ -14,7 +14,8 @@ let timeframe = 0;
 
 const togglePin = (pinNumber, timer) => {
 
-  const gpioFunction = spawn('python', ['runRelay.py', pinNumber, timer]);
+  const args = ['runRelay.py', pinNumber, timer];
+  const gpioFunction = spawn('python2', args);
 
   let returnOnOff;
 
