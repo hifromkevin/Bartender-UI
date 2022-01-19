@@ -3,10 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const port = 3005;
 const { Gpio } = require('onoff');
-
-const { spawn } = require('child_process');
-
-const gpio = require('gpio');
+// const gpio = require('gpio');
 
 app.use(bodyParser.json());
 
@@ -17,17 +14,10 @@ app.post('/makeDrink', (req, res) => {
   // Amount of oz divided by oz/second
   const pourInmL = (oz) => (oz * 29.5735) / 20;
 
-  const togglePinPy = (pinNumber, onOrOff) => (onOrOff === 'ON')
-    ? spawn("python", ["-c", `from piCommands import turnOnPin; turnOnPin(${pinNumber})`])
-    : spawn("python", ["-c", `from piCommands import turnOffPin; turnOffPin(${pinNumber})`]);
-
-  const performPinCleanUp = () => spawn(
-    "python",
-    ["-c", 'from piCommands import cleanUp; cleanUp()']
-  );
-
-  const turnOffChannelPy = (pin, ingredient, stationName) => {
-    performPinCleanUp();
+  // uses onoff
+  const turnOffChannel = (runningPin, pin, ingredient, stationName) => {
+    runningPin.writeSync(0);
+    runningPin.unexport();
 
     console.log(`Turning Off ${stationName}, Pin ${pin}: `, ingredient);
   };
@@ -44,14 +34,27 @@ app.post('/makeDrink', (req, res) => {
 
     timeframe = Math.max(timeframe, getSeconds);
 
-    togglePinPy(gpioPinNumber, 'ON');
-    console.log(`Firing ${stationName}, Pin ${gpioPinNumber}: `, selectedMixer, getSeconds);
+    const runPin = new Gpio(gpioPinNumber, 'out');
+    runPin;
 
-    setTimeout(() => turnOffChannelPy(gpioPinNumber, selectedMixer, stationName), getSeconds);
+    console.log(`Firing ${stationName}, Pin ${gpioPinNumber}: `, selectedMixer, getSeconds);
+    setTimeout(() => turnOffChannel(runPin, gpioPinNumber, selectedMixer, stationName), getSeconds);
+
+    // this uses gpio, also doesn't turn off
+    // console.log('himom!!!', pourInmL(ingredientAmountInOunces));
+    // const setPin = gpio.export(gpioPinNumber, {
+    //   direction: gpio.DIRECTION.OUT,
+    //   interval: pourInmL(ingredientAmountInOunces),
+    //   ready: () => console.log(`Firing ${stationName}, Pin ${gpioPinNumber}: `, selectedMixer, pourInmL(ingredientAmountInOunces))
+    // });
+
+    // setPin.set();
 
   }
   // Sends the amount of time, to be handled on the front-end by the progress bar
   res.status(200).send({ timeframe });
+
+
 }, (err, response) => {
   if (!err && response.statusCode == 200) {
     res.send(response.statusCode);
