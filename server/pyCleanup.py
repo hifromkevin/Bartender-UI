@@ -16,9 +16,9 @@ def cleanUp(channel):
 #   for i in pins:
 #     cleanUp(i)
 
-t = Timer(2.0, cleanUp(26))
+t = Timer(2.0, cleanUp, args=(26))
 t.start()
-t2 = Timer(4.0, cleanUp(19))
+t2 = Timer(4.0, cleanUp, args=(19))
 t2.start()
 
 
