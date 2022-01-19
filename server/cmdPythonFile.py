@@ -26,3 +26,5 @@ for i in valz:
 
   t = Timer(i[1], turnOff)
   t.start()
+
+GPIO.cleanup()
