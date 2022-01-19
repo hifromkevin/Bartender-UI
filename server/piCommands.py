@@ -1,12 +1,13 @@
 import Rpi.GPIO as GPIO
 
 def turnOnPin(pin):
-  GPIO.output(pin, True)
   print('PIN ON: ' + pin)
+  GPIO.output(pin, True)
 
 def turnOffPin(pin):
-  GPIO.output(pin, False)
   print('PIN OFF: ' + pin)
+  GPIO.output(pin, False)
+
 
 def cleanUp():
   GPIO.cleanup()
