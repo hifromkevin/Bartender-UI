@@ -1,4 +1,5 @@
 const { spawn } = require('child_process');
+const { pin } = require('nodemon/lib/version');
 
 const pins = [
   {
@@ -13,6 +14,7 @@ const pins = [
 let timeframe = 0;
 
 const togglePin = (pinNumber, timer) => {
+  console.log('himom!', pinNumber, timer)
   const args = ['runRelay.py', pinNumber, timer];
   const gpioFunction = spawn("python3", args);
 
@@ -25,6 +27,7 @@ const togglePin = (pinNumber, timer) => {
   gpioFunction.on('close', (code) => {
     console.log(code);
   });
+
   return true;
 }
 

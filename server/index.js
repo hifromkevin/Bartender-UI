@@ -2,11 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const port = 3005;
-const { Gpio } = require('onoff');
-
 const { spawn } = require('child_process');
-
-const gpio = require('gpio');
 
 app.use(bodyParser.json());
 
