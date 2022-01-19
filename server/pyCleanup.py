@@ -27,15 +27,13 @@ def turnOnPin(pin):
   GPIO.output(pin, 0)
   print('PIN ON: ' + str(pin))
 
-def turnPin(pin, time): 
+def activatePin(pin, time): 
   GPIO.setup(pin, GPIO.OUT, initial=1)
   turnOnPin(pin)
   def turnOff():
     GPIO.output(pin, 1)
   t = Timer(time, turnOff)
   t.start()
-
-turnPin(26, 2.345)
 
 
 
