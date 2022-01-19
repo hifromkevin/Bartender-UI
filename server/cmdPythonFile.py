@@ -19,7 +19,8 @@ def turnOff(pin):
 # t = Timer(1.5, turnOff)
 # t.start()
 
-valz = [[19,1.5],[26,3]]
+# valz = [[19,1.5],[26,3]]
+valz = sys.argv[1]
 
 print('SYS! ' + str(sys.argv))
 
