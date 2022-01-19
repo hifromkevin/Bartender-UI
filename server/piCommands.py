@@ -1,5 +1,7 @@
 import RPi.GPIO as GPIO
 
+GPIO.setmode(GPIO.BCM)
+
 def turnOnPin(pin):
   GPIO.output(pin, True)
   print('PIN ON: ' + pin)
