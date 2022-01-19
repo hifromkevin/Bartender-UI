@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 from threading import Timer
 
-# GPIO.setmode(GPIO.BCM)
+GPIO.setmode(GPIO.BCM)
 
 # pins = [26, 19]
 
@@ -16,7 +16,7 @@ from threading import Timer
 # t = Timer(2.0, cleanUp)
 # t.start()
 
-GPIO.cleanup([26])
+GPIO.cleanup(26)
 
 
 
