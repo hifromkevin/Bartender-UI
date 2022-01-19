@@ -21,7 +21,7 @@ def cleanUp(channel):
 # t2 = Timer(4.0, cleanUp, args=(19))
 # t2.start()
 
-GPIO.cleanup(26)
-GPIO.cleanup(19)
+cleanUp(26)
+cleanUp(19)
 # t2 = Timer(3.0, cleanUp())
 # t2.start()
