@@ -23,6 +23,10 @@ GPIO.setmode(GPIO.BCM)
 
 # GPIO.cleanup()
 
+def turnOnPin(pin):
+  GPIO.output(pin, 0)
+  print('PIN ON: ' + pin)
+
 def turnPin(pin, time): 
   GPIO.setup(pin, GPIO.OUT, initial=1)
   turnOnPin(pin)
