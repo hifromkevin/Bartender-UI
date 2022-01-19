@@ -17,15 +17,8 @@ app.post('/makeDrink', (req, res) => {
     const args = ['runRelay.py', pinNumber, timer];
     const gpioFunction = spawn("python3", args);
 
-    let returnOnOff;
-
-    gpioFunction.stdout.on('data', function (data) {
-      returnOnOff = data.toString();
-    });
-
-    gpioFunction.on('close', (code) => {
-      return true;
-    });
+    gpioFunction.stdout.on('data', data => console.log(data.toString()));
+    gpioFunction.stderr.on('data', data => console.log(data.toString()));
   }
 
   const performPinCleanUp = () => spawn(
