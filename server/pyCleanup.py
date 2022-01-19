@@ -3,27 +3,35 @@ from threading import Timer
 
 GPIO.setmode(GPIO.BCM)
 
-pins = [26, 19]
+# pins = [26, 19]
 
-for i in pins:
-    GPIO.setup(i, GPIO.OUT, initial=1)
-    print('PIN! ' + str(i) )
+# for i in pins:
+#     GPIO.setup(i, GPIO.OUT, initial=1)
+#     print('PIN! ' + str(i) )
 
-for i in pins:
-    GPIO.output(i, 0)
-    print('PIN! ' + str(i) )
+# for i in pins:
+#     GPIO.output(i, 0)
+#     print('PIN! ' + str(i) )
 
-def turnOff():
-  for i in pins:
-      GPIO.output(i, 1)
-      print('PIN! ' + str(i) )
+# def turnOff():
+#   for i in pins:
+#       GPIO.output(i, 1)
+#       print('PIN! ' + str(i) )
 
-t = Timer(2.0, turnOff)
-t.start()
+# t = Timer(2.0, turnOff)
+# t.start()
 
-GPIO.cleanup()
+# GPIO.cleanup()
 
+def turnPin(pin, time): 
+  GPIO.setup(pin, GPIO.OUT, initial=1)
+  turnOnPin(pin)
+  def turnOff():
+    GPIO.output(pin, 1)
+  t = Timer(time, turnOff)
+  t.start()
 
+turnPin(26, 2.345)
 
 
 
