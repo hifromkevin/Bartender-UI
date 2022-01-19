@@ -1,11 +1,11 @@
 const pins = [
   {
     pinNum: 26,
-    amountInOz = 3
+    amountInOz: 3
   },
   {
     pinNum: 19,
-    amountInOz = 1.5
+    amountInOz: 1.5
   }];
 
 let timeframe = 0;
