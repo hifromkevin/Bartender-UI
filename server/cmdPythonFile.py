@@ -13,14 +13,9 @@ def turnOff(pin):
   GPIO.setmode(GPIO.BCM)
   GPIO.output(pin, 1)
 
-# GPIO.setup(19, GPIO.OUT, initial=1)
-# turnOnPin(19)
 
-# t = Timer(1.5, turnOff)
-# t.start()
-
-valz = [[19,1.5],[26,3]]
-# valz = sys.argv[1]
+# valz = [[19,1.5],[26,3]]
+valz = sys.argv[1]
 
 # print('SYS! ' + str(sys.argv[1]))
 
