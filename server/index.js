@@ -18,8 +18,8 @@ app.post('/makeDrink', (req, res) => {
   const pourInmL = (oz) => (oz * 29.5735) / 20;
 
   const togglePinPy = (pinNumber, onOrOff) => (onOrOff === 'ON')
-    ? spawn("python", ["-c", `from piCommands import *; turnOnPin('${pinNumber}')`])
-    : spawn("python", ["-c", `from piCommands import *; turnOffPin('${pinNumber}')`]);
+    ? spawn("python", ["-c", `from piCommands import turnOnPin; turnOnPin('${pinNumber}')`])
+    : spawn("python", ["-c", `from piCommands import turnOffPin; turnOffPin('${pinNumber}')`]);
 
   const performPinCleanUp = () => spawn(
     "python",
