@@ -15,8 +15,8 @@ let timeframe = 0;
 const togglePinPy = (pinNumber, timer) => {
   // const gpioFunction = spawn("python", ["-c", `from pythonFile import activatePin; activatePin('${pinNumber}', '${timer}')`]);
   // const gpioFunction = spawn("python", ["-c", ["pythonFile.py", "`${pinNumber}`", "`${timer}`"]]);
-  const args = [pinNumber, timer];
-  const gpioFunction = spawn("python", `cmdPythonFile.py, ${args}`)
+  const args = ['cmdPythonFile.py', pinNumber, timer];
+  const gpioFunction = spawn("python", args);
 
   let returnOnOff;
 
