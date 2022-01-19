@@ -22,7 +22,7 @@ def turnOff(pin):
 valz = [[19,1.5],[26,3]]
 # valz = sys.argv[1]
 
-print('SYS! ' + str(sys.argv[1]))
+# print('SYS! ' + str(sys.argv[1]))
 
 for i in valz:
   GPIO.setup(i[0], GPIO.OUT, initial=1)
