@@ -10,6 +10,5 @@ def turnOffPin(pin):
   GPIO.output(pin, False)
   print('PIN OFF: ' + pin)
 
-
 def cleanUp():
   GPIO.cleanup()
