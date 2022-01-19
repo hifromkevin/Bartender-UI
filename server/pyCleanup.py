@@ -5,9 +5,9 @@ GPIO.setmode(GPIO.BCM)
 
 pinsSelected = [26, 19]
 
-# for i in pinsSelected:
-#     GPIO.setup(i, GPIO.OUT)
-#     GPIO.output(i, GPIO.HIGH)
+for i in pinsSelected:
+    GPIO.setup(i, GPIO.OUT)
+    GPIO.output(i, GPIO.HIGH)
 
 # def cleanUp():
 #   GPIO.cleanup()
