@@ -13,7 +13,7 @@ const pins = [
 let timeframe = 0;
 
 const togglePinPy = (pinNumber, timer) => {
-  const gpioFunction = spawn("python", ["-c", `from piCommands import activatePin; activatePin('${pinNumber}', '${timer}')`]);
+  const gpioFunction = spawn("python", ["-c", `from piCleanup import activatePin; activatePin('${pinNumber}', '${timer}')`]);
 
   let returnOnOff;
 
