@@ -9,7 +9,7 @@ timer = float(sys.argv[2])
 
 def turnOnPin(pin):
   GPIO.output(pin, 0)
-  print('PIN ON: ' + str(pin))
+  print('Turning Off Pin ' + str(pin))
 
 def turnOff():
   GPIO.output(pin, 1)

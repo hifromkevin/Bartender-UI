@@ -17,10 +17,9 @@ app.post('/makeDrink', (req, res) => {
   // Amount of oz divided by oz/second
   const pourInmL = (oz) => (oz * 29.5735) / 20;
 
-  const togglePinPy = (pinNumber, onOrOff, timer) => {
-    const gpioFunction = (onOrOff === 'ON')
-      ? spawn("python", ["-c", `from piCommands import turnOnPin; turnOnPin('${pinNumber}', '${timer}')`])
-      : spawn("python", ["-c", `from piCommands import turnOffPin; turnOffPin('${pinNumber}')`]);
+  const togglePin = (pinNumber, timer) => {
+    const args = ['runRelay.py', pinNumber, timer];
+    const gpioFunction = spawn("python3", args);
 
     let returnOnOff;
 
@@ -29,21 +28,15 @@ app.post('/makeDrink', (req, res) => {
     });
 
     gpioFunction.on('close', (code) => {
-      console.log(returnOnOff)
+      console.log(`${returnOnOff} - ${code}`)
+      return true;
     });
-
-    return true;
   }
 
   const performPinCleanUp = () => spawn(
     "python",
     ["-c", 'from piCommands import *; cleanUp()']
   );
-
-  const turnOffChannelPy = (pin, ingredient, stationName) => {
-    togglePinPy(pin, 'OFF');
-    console.log(`Turning Off ${stationName}, Pin ${pin}: `, ingredient);
-  };
 
   for (let i = 0; i < pins.length; i++) {
     const {
@@ -57,10 +50,8 @@ app.post('/makeDrink', (req, res) => {
 
     timeframe = Math.max(timeframe, getSeconds);
 
-    togglePinPy(gpioPinNumber, 'ON', getSeconds);
-    console.log(`Firing ${stationName}, Pin ${gpioPinNumber}: `, selectedMixer, getSeconds);
-
-    // setTimeout(() => turnOffChannelPy(gpioPinNumber, selectedMixer, stationName), getSeconds);
+    togglePin(pins[i].pinNum, getSeconds);
+    console.log(`Firing Pin ${pins[i].pinNum} for ${getSeconds} seconds`);
   }
   // Sends the amount of time, to be handled on the front-end by the progress bar
   res.status(200).send({ timeframe });
