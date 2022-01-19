@@ -13,6 +13,13 @@ app.post('/makeDrink', (req, res) => {
   // Amount of oz divided by oz/second
   const pourInmL = (oz) => (oz * 29.5735) / 20;
 
+  const testing = () => {
+    const spawning = spawn('ls');
+    spawning.stdout.on('data', data => console.log(data.toString()));
+    spawning.stderr.on('data', data => console.log(data.toString()));
+
+  }
+
   const togglePin = (pinNumber, timer) => {
     const args = ['runRelay.py', pinNumber, timer];
     const gpioFunction = spawn('python3', args);
@@ -25,6 +32,8 @@ app.post('/makeDrink', (req, res) => {
     "python",
     ["-c", 'from piCommands import *; cleanUp()']
   );
+
+  testing();
 
   for (let i = 0; i < pins.length; i++) {
     const {
