@@ -27,8 +27,7 @@ app.post('/makeDrink', (req, res) => {
   );
 
   const turnOffChannelPy = (pin, ingredient, stationName) => {
-    performPinCleanUp();
-
+    togglePinPy(pin, 'OFF');
     console.log(`Turning Off ${stationName}, Pin ${pin}: `, ingredient);
   };
 
@@ -48,11 +47,10 @@ app.post('/makeDrink', (req, res) => {
     console.log(`Firing ${stationName}, Pin ${gpioPinNumber}: `, selectedMixer, getSeconds);
 
     setTimeout(() => turnOffChannelPy(gpioPinNumber, selectedMixer, stationName), getSeconds);
-
   }
   // Sends the amount of time, to be handled on the front-end by the progress bar
   res.status(200).send({ timeframe });
-  performPinCleanUp();
+  // performPinCleanUp();
 }, (err, response) => {
   if (!err && response.statusCode == 200) {
     res.send(response.statusCode);
