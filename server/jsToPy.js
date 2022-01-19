@@ -13,7 +13,8 @@ const pins = [
 let timeframe = 0;
 
 const togglePinPy = (pinNumber, timer) => {
-  const gpioFunction = spawn("python", ["-c", `from piCleanup import activatePin; activatePin('${pinNumber}', '${timer}')`]);
+  // const gpioFunction = spawn("python", ["-c", `from piCleanup import activatePin; activatePin('${pinNumber}', '${timer}')`]);
+  const gpioFunction = spawn("python", ["-c", ['piCleanup.py', pinNumber, timer]]);
 
   let returnOnOff;
 
@@ -22,7 +23,7 @@ const togglePinPy = (pinNumber, timer) => {
   });
 
   gpioFunction.on('close', (code) => {
-    console.log(returnOnOff)
+    console.log(`${returnOnOff} - ${code}`)
   });
 
   return true;
