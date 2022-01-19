@@ -22,6 +22,8 @@ app.post('/makeDrink', (req, res) => {
       ? spawn("python", ["-c", `from piCommands import turnOnPin; turnOnPin('${pinNumber}')`])
       : spawn("python", ["-c", `from piCommands import turnOffPin; turnOffPin('${pinNumber}')`]);
 
+    let returnOnOff;
+
     gpioFunction.stdout.on('data', function (data) {
       returnOnOff = data.toString();
     });
