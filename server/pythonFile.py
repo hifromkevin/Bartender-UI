@@ -10,12 +10,12 @@ def turnOnPin(pin):
   print('PIN ON: ' + str(pin))
 
 def turnOff():
-  GPIO.output(sys.argv[0], 1)
+  GPIO.output(sys.argv[1], 1)
 
-GPIO.setup(sys.argv[0], GPIO.OUT, initial=1)
-turnOnPin(sys.argv[0])
+GPIO.setup(sys.argv[1], GPIO.OUT, initial=1)
+turnOnPin(sys.argv[1])
 
-t = Timer(sys.argv[1], turnOff)
+t = Timer(sys.argv[2], turnOff)
 t.start()
 
 def activatePin(pin, timer):
