@@ -50,8 +50,8 @@ app.post('/makeDrink', (req, res) => {
 
     timeframe = Math.max(timeframe, getSeconds);
 
-    togglePin(pins[i].pinNum, getSeconds);
-    console.log(`Firing Pin ${pins[i].pinNum} for ${getSeconds} seconds`);
+    togglePin(gpioPinNumber, getSeconds);
+    console.log(`Firing Pin ${gpioPinNumber} for ${getSeconds} seconds`);
   }
   // Sends the amount of time, to be handled on the front-end by the progress bar
   res.status(200).send({ timeframe });
