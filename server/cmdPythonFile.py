@@ -20,7 +20,8 @@ valz = sys.argv[1]
 # print('SYS! ' + str(sys.argv[1]))
 
 for i in valz:
-  GPIO.setup(int(i[0]), GPIO.OUT, initial=1)
+  print('Type: ' + type(i[0]))
+  GPIO.setup(i[0], GPIO.OUT, initial=1)
   turnOnPin(i[0])
 
   t = Timer(i[1], turnOff, args=[i[0]])
