@@ -369,7 +369,7 @@ const cocktails = [
       },
       {
         ingredientName: 'Club Soda',
-        ingredientAmountInOunces: '10'
+        ingredientAmountInOunces: '3'
       },
     ],
     cocktailSteps: [

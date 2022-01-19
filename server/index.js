@@ -10,8 +10,11 @@ app.post('/makeDrink', (req, res) => {
   const { body: { pins } } = req;
   let timeframe = 0;
 
-  // Amount of oz divided by oz/second
-  const pourInmL = (oz) => (oz * 29.5735) / 20;
+  // Amount of oz, converted to mL divided by seconds
+  // const pourInmL = (oz) => (oz * 29.5735) / 20;
+
+  // Every oz takes about 10 seconds
+  const ozToTime = oz => oz * 10;
 
   const testing = () => {
     const spawning = spawn('ls');
@@ -43,7 +46,7 @@ app.post('/makeDrink', (req, res) => {
       stationName
     } = pins[i];
 
-    const getSeconds = Number(pourInmL(ingredientAmountInOunces));
+    const getSeconds = Number(ozToTime(ingredientAmountInOunces));
 
     timeframe = Math.max(timeframe, getSeconds);
 
