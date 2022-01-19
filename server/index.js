@@ -15,7 +15,7 @@ app.post('/makeDrink', (req, res) => {
 
   const togglePin = (pinNumber, timer) => {
     const args = ['runRelay.py', pinNumber, timer];
-    const gpioFunction = spawn("python3", args);
+    const gpioFunction = spawn('python3', args);
 
     gpioFunction.stdout.on('data', data => console.log(data.toString()));
     gpioFunction.stderr.on('data', data => console.log(data.toString()));
