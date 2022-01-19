@@ -12,13 +12,14 @@ for i in pinsSelected:
 def cleanUp(channel):
   GPIO.cleanup(channel)
 
-def turnOff(pins):
-  for i in pins:
-    cleanUp(i)
+# def turnOff(pins):
+#   for i in pins:
+#     cleanUp(i)
 
-t = Timer(2.0, turnOff(pinsSelected))
+t = Timer(2.0, cleanUp(26))
 t.start()
-
+t2 = Timer(4.0, cleanUp(19))
+t2.start()
 
 
 
