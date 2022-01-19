@@ -16,12 +16,12 @@ def cleanUp(channel):
 #   for i in pins:
 #     cleanUp(i)
 
-t = Timer(2.0, cleanUp, args=(26))
-t.start()
-t2 = Timer(4.0, cleanUp, args=(19))
-t2.start()
+# t = Timer(2.0, cleanUp, args=(26))
+# t.start()
+# t2 = Timer(4.0, cleanUp, args=(19))
+# t2.start()
 
-
-
+GPIO.cleanup(26)
+GPIO.cleanup(19)
 # t2 = Timer(3.0, cleanUp())
 # t2.start()
