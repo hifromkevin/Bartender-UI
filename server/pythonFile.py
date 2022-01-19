@@ -5,6 +5,7 @@ GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 
 print('ARG!', str(sys.argv))
+print('ARG!A', float(sys.argv[1]))
 
 def turnOnPin(pin):
   GPIO.output(pin, 0)
