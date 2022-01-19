@@ -17,9 +17,21 @@ app.post('/makeDrink', (req, res) => {
   // Amount of oz divided by oz/second
   const pourInmL = (oz) => (oz * 29.5735) / 20;
 
-  const togglePinPy = (pinNumber, onOrOff) => (onOrOff === 'ON')
-    ? spawn("python", ["-c", `from piCommands import turnOnPin; turnOnPin('${pinNumber}')`])
-    : spawn("python", ["-c", `from piCommands import turnOffPin; turnOffPin('${pinNumber}')`]);
+  const togglePinPy = (pinNumber, onOrOff) => {
+    const gpioFunction = (onOrOff === 'ON')
+      ? spawn("python", ["-c", `from piCommands import turnOnPin; turnOnPin('${pinNumber}')`])
+      : spawn("python", ["-c", `from piCommands import turnOffPin; turnOffPin('${pinNumber}')`]);
+
+    gpioFunction.stdout.on('data', function (data) {
+      returnOnOff = data.toString();
+    });
+
+    gpioFunction.on('close', (code) => {
+      console.log(returnOnOff)
+    });
+
+    return true;
+  }
 
   const performPinCleanUp = () => spawn(
     "python",
