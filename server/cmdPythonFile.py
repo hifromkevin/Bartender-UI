@@ -21,8 +21,8 @@ print('SYS! ' + str(sys.argv[1]))
 
 for i in valz:
   print(i)
-  GPIO.setup(i[0], GPIO.OUT, initial=1)
-  turnOnPin(i[0])
+  # GPIO.setup(i[0], GPIO.OUT, initial=1)
+  # turnOnPin(i[0])
 
-  t = Timer(i[1], turnOff, args=[i[0]])
-  t.start()
+  # t = Timer(i[1], turnOff, args=[i[0]])
+  # t.start()
