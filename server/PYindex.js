@@ -3,7 +3,10 @@ const app = express();
 const bodyParser = require('body-parser');
 const port = 3005;
 const { Gpio } = require('onoff');
-// const gpio = require('gpio');
+
+const { spawn } = require('child_process');
+
+const gpio = require('gpio');
 
 app.use(bodyParser.json());
 
@@ -14,11 +17,31 @@ app.post('/makeDrink', (req, res) => {
   // Amount of oz divided by oz/second
   const pourInmL = (oz) => (oz * 29.5735) / 20;
 
-  // uses onoff
-  const turnOffChannel = (runningPin, pin, ingredient, stationName) => {
-    runningPin.writeSync(0);
-    runningPin.unexport();
+  const togglePinPy = (pinNumber, onOrOff) => {
+    const gpioFunction = (onOrOff === 'ON')
+      ? spawn("python", ["-c", `from piCommands import turnOnPin; turnOnPin('${pinNumber}')`])
+      : spawn("python", ["-c", `from piCommands import turnOffPin; turnOffPin('${pinNumber}')`]);
 
+    let returnOnOff;
+
+    gpioFunction.stdout.on('data', function (data) {
+      returnOnOff = data.toString();
+    });
+
+    gpioFunction.on('close', (code) => {
+      console.log(returnOnOff)
+    });
+
+    return true;
+  }
+
+  const performPinCleanUp = () => spawn(
+    "python",
+    ["-c", 'from piCommands import *; cleanUp()']
+  );
+
+  const turnOffChannelPy = (pin, ingredient, stationName) => {
+    togglePinPy(pin, 'OFF');
     console.log(`Turning Off ${stationName}, Pin ${pin}: `, ingredient);
   };
 
@@ -30,31 +53,18 @@ app.post('/makeDrink', (req, res) => {
       stationName
     } = pins[i];
 
-    const getSeconds = Number(pourInmL(ingredientAmountInOunces)) * 1000;
+    const getSeconds = Number(pourInmL(ingredientAmountInOunces));
 
     timeframe = Math.max(timeframe, getSeconds);
 
-    const runPin = new Gpio(gpioPinNumber, 'out');
-    runPin;
-
+    togglePinPy(gpioPinNumber, 'ON');
     console.log(`Firing ${stationName}, Pin ${gpioPinNumber}: `, selectedMixer, getSeconds);
-    setTimeout(() => turnOffChannel(runPin, gpioPinNumber, selectedMixer, stationName), getSeconds);
 
-    // this uses gpio, also doesn't turn off
-    // console.log('himom!!!', pourInmL(ingredientAmountInOunces));
-    // const setPin = gpio.export(gpioPinNumber, {
-    //   direction: gpio.DIRECTION.OUT,
-    //   interval: pourInmL(ingredientAmountInOunces),
-    //   ready: () => console.log(`Firing ${stationName}, Pin ${gpioPinNumber}: `, selectedMixer, pourInmL(ingredientAmountInOunces))
-    // });
-
-    // setPin.set();
-
+    setTimeout(() => turnOffChannelPy(gpioPinNumber, selectedMixer, stationName), getSeconds);
   }
   // Sends the amount of time, to be handled on the front-end by the progress bar
   res.status(200).send({ timeframe });
-
-
+  // performPinCleanUp();
 }, (err, response) => {
   if (!err && response.statusCode == 200) {
     res.send(response.statusCode);
