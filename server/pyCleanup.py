@@ -6,7 +6,7 @@ GPIO.setmode(GPIO.BCM)
 pins = [26, 19]
 
 for i in pins:
-    GPIO.setup(i, GPIO.OUT, 1)
+    GPIO.setup(i, GPIO.OUT, initial=1)
     print('PIN! ' + str(i) )
 
 for i in pins:
