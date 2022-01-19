@@ -23,7 +23,6 @@ const togglePin = (pinNumber, timer) => {
   });
 
   gpioFunction.on('close', (code) => {
-    console.log(`${returnOnOff} - ${code}`)
     return true;
   });
 }

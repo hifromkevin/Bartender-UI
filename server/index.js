@@ -28,7 +28,6 @@ app.post('/makeDrink', (req, res) => {
     });
 
     gpioFunction.on('close', (code) => {
-      console.log(`${returnOnOff} - ${code}`)
       return true;
     });
   }
