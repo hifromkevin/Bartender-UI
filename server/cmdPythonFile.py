@@ -6,12 +6,12 @@ GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 
 def turnOnPin(pin):
-  GPIO.output(pin, 1)
+  GPIO.output(pin, GPIO.HIGH)
   print('PIN ON: ' + str(pin))
 
 def turnOff(pin):
   GPIO.setmode(GPIO.BCM)
-  GPIO.output(pin, 0)
+  GPIO.output(pin, GPIO.LOW)
 
 # GPIO.setup(19, GPIO.OUT, initial=1)
 # turnOnPin(19)
@@ -25,7 +25,7 @@ valz = [[19,1.5],[26,3]]
 print('SYS! ' + str(sys.argv))
 
 for i in valz:
-  GPIO.setup(i[0], GPIO.OUT, initial=0)
+  GPIO.setup(i[0], GPIO.OUT, initial=GPIO.LOW)
   turnOnPin(i[0])
 
   t = Timer(i[1], turnOff(i[0]))
