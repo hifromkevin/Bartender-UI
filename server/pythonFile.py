@@ -2,8 +2,9 @@ import RPi.GPIO as GPIO
 from threading import Timer
 import sys
 GPIO.setwarnings(False)
-
 GPIO.setmode(GPIO.BCM)
+
+print('ARG!', str(sys.argv))
 
 def turnOnPin(pin):
   GPIO.output(pin, 0)
