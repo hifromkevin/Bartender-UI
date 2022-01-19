@@ -1,5 +1,5 @@
 import RPi.GPIO as GPIO
-from threading import Timer
+# from threading import Timer
 
 GPIO.setmode(GPIO.BCM)
 
@@ -11,6 +11,7 @@ for i in pinsSelected:
 
 def cleanUp():
   GPIO.cleanup()
+cleanUp()
 
 # def turnOff(pins):
 #   for i in pins:
@@ -21,5 +22,5 @@ def cleanUp():
 # t2 = Timer(4.0, cleanUp, args=(19))
 # t2.start()
 
-t2 = Timer(2.0, GPIO.cleanup())
-t2.start()
+# t2 = Timer(2.0, GPIO.cleanup())
+# t2.start()
