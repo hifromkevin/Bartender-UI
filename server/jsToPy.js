@@ -22,12 +22,8 @@ const togglePin = (pinNumber, timer) => {
     returnOnOff = data.toString();
   });
 
-  process.stderr.on('data', function (data) {
-    returnOnOff += data.toString();
-  });
-
   gpioFunction.on('close', function (code) {
-    console.log(`${returnOnOff} - ${code}`)
+    console.log(code);
     return true;
   });
 }
