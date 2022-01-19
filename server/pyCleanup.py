@@ -9,11 +9,6 @@ for i in pinsSelected:
     GPIO.setup(i, GPIO.OUT)
     GPIO.output(i, GPIO.HIGH)
 
-# def cleanUp():
-#   GPIO.cleanup()
-
-# cleanUp()
-
 def turnOff(pins):
   for i in pins:
     GPIO.setup(i, GPIO.OUT)
@@ -21,3 +16,10 @@ def turnOff(pins):
 
 t = Timer(2.0, turnOff(pinsSelected))
 t.start()
+
+
+def cleanUp():
+  GPIO.cleanup()
+
+t2 = Timer(2.0, cleanUp())
+t2.start()
