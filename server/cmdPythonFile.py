@@ -20,8 +20,7 @@ def turnOff():
 
 valz = [[19, 3], [26, 1.5]]
 
-
-for i in list:
+for i in valz:
   GPIO.setup(i[0], GPIO.OUT, initial=1)
   turnOnPin(i[0])
 
