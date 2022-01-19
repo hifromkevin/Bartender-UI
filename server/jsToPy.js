@@ -20,7 +20,7 @@ const togglePin = (pinNumber, timer) => {
 
   console.log('himom???', gpioFunction.stdout.on('data', (data) => {
     returnOnOff = data.toString();
-  });)
+  }))
 
   let returnOnOff;
 
