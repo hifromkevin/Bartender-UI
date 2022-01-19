@@ -9,9 +9,9 @@ for i in pinsSelected:
     GPIO.setup(i, GPIO.OUT)
     GPIO.output(i, GPIO.HIGH)
 
-def cleanUp():
-  GPIO.cleanup()
-cleanUp()
+# def cleanUp():
+#   GPIO.cleanup()
+# cleanUp()
 
 # def turnOff(pins):
 #   for i in pins:
