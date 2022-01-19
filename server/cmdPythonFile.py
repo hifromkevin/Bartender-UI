@@ -28,5 +28,5 @@ for i in valz:
   GPIO.setup(i[0], GPIO.OUT, initial=1)
   turnOnPin(i[0])
 
-  t = Timer(i[1], turnOff(i[0]))
+  t = Timer(i[1], turnOff, args=(i[0]))
   t.start()
