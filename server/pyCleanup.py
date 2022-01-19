@@ -11,5 +11,5 @@ for i in pins:
 
 def cleanUp():
   GPIO.cleanup()
-t = Timer(2.0, cleanUp())
+t = Timer(2.0, cleanUp)
 t.start()
