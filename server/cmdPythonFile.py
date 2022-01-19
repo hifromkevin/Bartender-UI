@@ -20,7 +20,7 @@ valz = sys.argv[1]
 # print('SYS! ' + str(sys.argv[1]))
 
 for i in valz:
-  print('Type: ' + type(i[0]))
+  print('Type: ' + str(type(i[0])))
   GPIO.setup(i[0], GPIO.OUT, initial=1)
   turnOnPin(i[0])
 
