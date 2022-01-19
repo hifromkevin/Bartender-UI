@@ -16,7 +16,7 @@ const togglePinPy = (pinNumber, timer) => {
   // const gpioFunction = spawn("python", ["-c", `from pythonFile import activatePin; activatePin('${pinNumber}', '${timer}')`]);
   // const gpioFunction = spawn("python", ["-c", ["pythonFile.py", "`${pinNumber}`", "`${timer}`"]]);
   const args = ['pythonFile.py', pinNumber, timer];
-  const gpioFunction = spawn("python", args);
+  const gpioFunction = spawn("python3", args);
 
   let returnOnOff;
 
@@ -37,5 +37,5 @@ for (let i = 0; i < pins.length; i++) {
   timeframe = Math.max(timeframe, getSeconds);
 
   togglePinPy(pins[i].pinNum, getSeconds);
-  console.log(`Firing Pin ${pins[i].pinNum}`);
+  console.log(`Firing Pin ${pins[i].pinNum} for ${getSeconds} seconds`);
 }

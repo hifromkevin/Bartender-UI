@@ -12,8 +12,18 @@ def turnOnPin(pin):
 def turnOff():
   GPIO.output(19, 1)
 
-GPIO.setup(19, GPIO.OUT, initial=1)
-turnOnPin(19)
+# GPIO.setup(19, GPIO.OUT, initial=1)
+# turnOnPin(19)
 
-t = Timer(1.5, turnOff)
-t.start()
+# t = Timer(1.5, turnOff)
+# t.start()
+
+valz = [[19, 3], [26, 1.5]]
+
+
+for i in list:
+  GPIO.setup(i[0], GPIO.OUT, initial=1)
+  turnOnPin(i[0])
+
+  t = Timer(i[1], turnOff)
+  t.start()
