@@ -14,7 +14,7 @@ const pins = [
 let timeframe = 0;
 
 const togglePin = (pinNumber, timer) => {
-  console.log('himom!', pinNumber, timer)
+
   const args = ['runRelay.py', pinNumber, timer];
   const gpioFunction = spawn("python3", args);
 

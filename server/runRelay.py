@@ -1,13 +1,12 @@
 import RPi.GPIO as GPIO
 from threading import Timer
 import sys
+
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 
 pin = int(sys.argv[1])
 timer = float(sys.argv[2])
-
-print('himom!', pin, timer)
 
 def turnOnPin(pin):
   GPIO.output(pin, 0)
