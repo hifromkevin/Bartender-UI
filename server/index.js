@@ -10,18 +10,20 @@ app.post('/makeDrink', (req, res) => {
   const { body: { pins } } = req;
   let timeframe = 0;
 
-  // Amount of oz, converted to mL divided by seconds
-  // const pourInmL = (oz) => (oz * 29.5735) / 20;
-
   // Every oz takes about 10 seconds
   const ozToTime = oz => oz * 10;
 
-  const testing = () => {
-    const spawning = spawn('ls');
-    spawning.stdout.on('data', data => console.log(data.toString()));
-    spawning.stderr.on('data', data => console.log(data.toString()));
-
-  }
+  /* 
+    Use for troubleshooting if Python file is not found:
+  
+    const testing = () => {
+      const spawning = spawn('ls');
+      spawning.stdout.on('data', data => console.log(data.toString()));
+      spawning.stderr.on('data', data => console.log(data.toString()));
+    }
+  
+    testing();
+    */
 
   const togglePin = (pinNumber, timer) => {
     const args = ['./server/runRelay.py', pinNumber, timer];
@@ -35,8 +37,6 @@ app.post('/makeDrink', (req, res) => {
     "python",
     ["-c", 'from piCommands import *; cleanUp()']
   );
-
-  testing();
 
   for (let i = 0; i < pins.length; i++) {
     const {
@@ -53,6 +53,7 @@ app.post('/makeDrink', (req, res) => {
     togglePin(gpioPinNumber, getSeconds);
     console.log(`Firing Pin ${gpioPinNumber} for ${getSeconds} seconds`);
   }
+
   // Sends the amount of time, to be handled on the front-end by the progress bar
   res.status(200).send({ timeframe });
   // performPinCleanUp();
