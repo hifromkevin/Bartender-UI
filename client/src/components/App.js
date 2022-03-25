@@ -19,7 +19,7 @@ const App = () => {
       {
         id: 0,
         stationName: 'Station 1',
-        gpioPinNumber: 26,
+        gpioPinNumber: 9,
         selectedMixer: null,
         selectedMixerImage: null,
         selectedMixerCategory: null
@@ -27,7 +27,7 @@ const App = () => {
       {
         id: 1,
         stationName: 'Station 2',
-        gpioPinNumber: 17,
+        gpioPinNumber: 10,
         selectedMixer: null,
         selectedMixerImage: null,
         selectedMixerCategory: null
@@ -35,7 +35,7 @@ const App = () => {
       {
         id: 2,
         stationName: 'Station 3',
-        gpioPinNumber: 27,
+        gpioPinNumber: 22,
         selectedMixer: null,
         selectedMixerImage: null,
         selectedMixerCategory: null
@@ -43,7 +43,7 @@ const App = () => {
       {
         id: 3,
         stationName: 'Station 4',
-        gpioPinNumber: 19,
+        gpioPinNumber: 27,
         selectedMixer: null,
         selectedMixerImage: null,
         selectedMixerCategory: null
@@ -51,7 +51,7 @@ const App = () => {
       {
         id: 4,
         stationName: 'Station 5',
-        gpioPinNumber: 10,
+        gpioPinNumber: 17,
         selectedMixer: null,
         selectedMixerImage: null,
         selectedMixerCategory: null
@@ -59,7 +59,7 @@ const App = () => {
       {
         id: 5,
         stationName: 'Station 6',
-        gpioPinNumber: 9,
+        gpioPinNumber: 4,
         selectedMixer: null,
         selectedMixerImage: null,
         selectedMixerCategory: null
@@ -67,7 +67,7 @@ const App = () => {
       {
         id: 6,
         stationName: 'Station 7',
-        gpioPinNumber: 11,
+        gpioPinNumber: 3,
         selectedMixer: null,
         selectedMixerImage: null,
         selectedMixerCategory: null
@@ -75,7 +75,7 @@ const App = () => {
       {
         id: 7,
         stationName: 'Station 8',
-        gpioPinNumber: 5,
+        gpioPinNumber: 2,
         selectedMixer: null,
         selectedMixerImage: null,
         selectedMixerCategory: null
