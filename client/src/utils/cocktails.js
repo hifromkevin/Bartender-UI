@@ -379,6 +379,47 @@ const cocktails = [
     ]
   },
   {
+    cocktailName: 'Old Fashioned',
+    cocktailDescription: 'A true classic! All it takes is some whiskey and a little sweetness.',
+    cocktailGarnishes: [
+      {
+        garnishName: 'Rocks Glass',
+        garnishImage: 'assets/images/icons/cocktail.png',
+      },
+      {
+        garnishName: 'Ice Cubes',
+        garnishImage: 'assets/images/icons/ice.png',
+      },
+      {
+        garnishName: 'Lemon or Orange Peel',
+        garnishImage: 'assets/images/icons/wedge.png',
+      },
+      {
+        garnishName: 'Angostura Bitters',
+        garnishImage: 'assets/images/icons/cocktail.png',
+      },
+    ],
+    cocktailImage: 'assets/images/cocktails/old-fashioned.jpg',
+    cocktailIngredients: [
+      {
+        ingredientName: 'Whiskey',
+        ingredientAmountInOunces: '2'
+      },
+      {
+        ingredientName: 'Simple Syrup',
+        ingredientAmountInOunces: '0.5'
+      },
+    ],
+    cocktailSteps: [
+      'Add Angostura bitters to a Rocks Glass',
+      'If desired, add water',
+      'Add in a large ice cube',
+      'Place glass into the bartender',
+      'Gently stir',
+      'For bourbon, garnish with an orange peel (or lemon peel for rye)'
+    ]
+  },
+  {
     cocktailName: 'Drink',
     cocktailDescription: 'lorem ipsum',
     cocktailGarnishes: [],

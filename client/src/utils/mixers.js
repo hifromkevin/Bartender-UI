@@ -1,11 +1,6 @@
 const mixers = [
   {
     mixerCategory: 'Vodka',
-    mixerName: 'Absolut Vodka',
-    mixerImage: 'assets/images/mixers/absolut.jpg'
-  },
-  {
-    mixerCategory: 'Vodka',
     mixerName: 'Round Rock Vodka',
     mixerImage: 'assets/images/mixers/round-rock-vodka.jpg'
   },
@@ -13,6 +8,11 @@ const mixers = [
     mixerCategory: 'Vanilla Vodka',
     mixerName: 'Stoli Vanil Vodka',
     mixerImage: 'assets/images/mixers/stoli-vanil.jpg'
+  },
+  {
+    mixerCategory: 'Whiskey',
+    mixerName: 'Jack Daniel\'s',
+    mixerImage: 'assets/images/mixers/jack-daniels.jpg'
   },
   {
     mixerCategory: 'Cranberry Juice',
@@ -88,6 +88,16 @@ const mixers = [
     mixerCategory: 'Lime Juice',
     mixerName: 'Fresh Lime Juice',
     mixerImage: 'assets/images/mixers/lime-juice.jpg'
+  },
+  {
+    mixerCategory: 'Simple Syrup',
+    mixerName: 'Simple Syrup',
+    mixerImage: 'assets/images/mixers/simple-syrup.jpg'
+  },
+  {
+    mixerCategory: 'Vodka',
+    mixerName: 'Absolut Vodka',
+    mixerImage: 'assets/images/mixers/absolut.jpg'
   },
 ];
 
