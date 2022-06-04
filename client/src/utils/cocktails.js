@@ -420,6 +420,40 @@ const cocktails = [
     ]
   },
   {
+    cocktailName: 'Shirley Temple (Non-Alcoholic)',
+    cocktailDescription: 'Feel fancy just like the famous actress!',
+    cocktailGarnishes: [
+      {
+        garnishName: 'Tall Glass',
+        garnishImage: 'assets/images/icons/cocktail.png',
+      },
+      {
+        garnishName: 'Ice Cubes',
+        garnishImage: 'assets/images/icons/ice.png',
+      },
+      {
+        garnishName: 'Maraschino Cherry',
+        garnishImage: 'assets/images/icons/wedge.png',
+      }
+    ],
+    cocktailImage: 'assets/images/cocktails/shirley-temple.jpg',
+    cocktailIngredients: [
+      {
+        ingredientName: 'Grenadine',
+        ingredientAmountInOunces: '1.5'
+      },
+      {
+        ingredientName: 'Ginger Ale',
+        ingredientAmountInOunces: '4'
+      },
+    ],
+    cocktailSteps: [
+      'Fill a Tall Glass with ice',
+      'Place glass into the bartender',
+      'Garnish with a marachino cherry'
+    ]
+  },
+  {
     cocktailName: 'Drink',
     cocktailDescription: 'lorem ipsum',
     cocktailGarnishes: [],

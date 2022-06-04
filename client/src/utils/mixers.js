@@ -55,6 +55,11 @@ const mixers = [
     mixerImage: 'assets/images/mixers/coca-cola.jpg'
   },
   {
+    mixerCategory: 'Ginger Ale',
+    mixerName: 'Canada Dry Ginger Ale',
+    mixerImage: 'assets/images/mixers/canada-dry-ginger-ale.jpg'
+  },
+  {
     mixerCategory: 'Rum',
     mixerName: 'Bacardi',
     mixerImage: 'assets/images/mixers/bacardi.jpg'
@@ -71,8 +76,13 @@ const mixers = [
   },
   {
     mixerCategory: 'Grenadine',
+    mixerName: 'Sonoma Syrup Grenadine',
+    mixerImage: 'assets/images/mixers/sonoma-syrup-grenadine.jpg'
+  },
+  {
+    mixerCategory: 'Grenadine',
     mixerName: 'De Kuyper Grenadine',
-    mixerImage: 'assets/images/mixers/grenadine.jpg'
+    mixerImage: 'assets/images/mixers/de-kuyper-grenadine.jpg'
   },
   {
     mixerCategory: 'Creme de Cocoa',
